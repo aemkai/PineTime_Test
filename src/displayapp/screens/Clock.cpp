@@ -25,8 +25,8 @@ CtsData currentDateTime;
 using namespace Pinetime::Applications::Screens;
 extern lv_font_t jetbrains_mono_extrabold_compressed;
 extern lv_font_t jetbrains_mono_bold_20;
-extern lv_font_t jetbrains_mono_bold_42;
-extern lv_font_t jetbrains_mono_bold_76;
+extern lv_font_t jetbrains_mono_42;
+extern lv_font_t jetbrains_mono_76;
 extern lv_style_t* LabelBigStyle;
 
 static void event_handler(lv_obj_t * obj, lv_event_t event) {
@@ -176,10 +176,9 @@ bool Clock::Refresh()
 	char hoursChar[3];
 	sprintf(hoursChar, "%02d", static_cast<int>(hour));
 
-	char timeStr[6];
+	char timeStr[5];
 	sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
 
-	char timeStr[4];
 	char secondsStr[3];	  
 	  
     	if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3]  || secondsChar[0] != displayedChar[4] || secondsChar[1] != displayedChar[5])
@@ -284,9 +283,6 @@ const char *Clock::DayOfWeekShortToStringLow(Pinetime::Controllers::DateTime::Da
   return Clock::DaysStringShortLow[(uint8_t) dayOfWeek];
 }
 
-void DateTime::Register(Pinetime::System::SystemTask* systemTask) {
-  this->systemTask = systemTask;
-}
 
 char const *Clock::DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
 
