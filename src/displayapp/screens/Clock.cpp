@@ -217,7 +217,7 @@ bool Clock::Refresh()
 	{
 		char dateStr[22];
 		//sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekToString(), day, month, year);		
-		sprintf(dateStr, "%s %d.%02d.%d", DayOfWeekToString(), day, month, year);		
+		sprintf(dateStr, "%s %d.%02d.%d", DayOfWeekToString(dayOfWeek), day, month, year);		
 
 		lv_label_set_text(label_date, dateStr);
 		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
