@@ -6,7 +6,7 @@
 # Name of this Workflow
 name: Simulate PineTime Firmware
 
-# When to run this Workflow...
+# When to run this Workflow....
 on:
 
   # Run this Workflow when files are updated (Pushed) in the "master" Branch
