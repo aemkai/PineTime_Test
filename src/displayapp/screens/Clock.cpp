@@ -11,6 +11,17 @@
 //#include "NotificationManager.h" //#include "components/ble/NotificationManager.h"  -> nicht in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 //#include "NotificationIcon.h" //#include "NotificationIcon.h"  -> nicht in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 
+/* Definition currentDateTime 
+CtsData currentDateTime;
+	currentDateTime.year = m_dateTimeController.Year();
+	currentDateTime.month = static_cast<u_int8_t>(m_dateTimeController.Month());
+	currentDateTime.dayofmonth = m_dateTimeController.Day();
+	currentDateTime.hour = m_dateTimeController.Hours();
+	currentDateTime.minute = m_dateTimeController.Minutes();
+	currentDateTime.second = m_dateTimeController.Seconds();
+	currentDateTime.millis = 0;
+ Extra Ende */
+
 using namespace Pinetime::Applications::Screens;
 extern lv_font_t jetbrains_mono_extrabold_compressed;
 extern lv_font_t jetbrains_mono_bold_20;
@@ -92,9 +103,11 @@ Clock::~Clock() {
   lv_obj_clean(lv_scr_act());
 }
 
-bool Clock::Refresh() {
+bool Clock::Refresh()
+{
   batteryPercentRemaining = batteryController.PercentRemaining();
-  if (batteryPercentRemaining.IsUpdated()) {
+  if (batteryPercentRemaining.IsUpdated())
+  {
     auto batteryPercent = batteryPercentRemaining.Get();
     lv_label_set_text(batteryIcon, BatteryIcon::GetBatteryIcon(batteryPercent));
     auto isCharging = batteryController.IsCharging() || batteryController.IsPowerPresent();
@@ -102,8 +115,10 @@ bool Clock::Refresh() {
   }
 
   bleState = bleController.IsConnected();
-  if (bleState.IsUpdated()) {
-    if(bleState.Get() == true) {
+  if (bleState.IsUpdated())
+  {
+    if(bleState.Get() == true)
+    {
       lv_label_set_text(bleIcon, BleIcon::GetIcon(true));
     } else {
       lv_label_set_text(bleIcon, BleIcon::GetIcon(false));
@@ -114,64 +129,68 @@ bool Clock::Refresh() {
   lv_obj_align(bleIcon, batteryPlug, LV_ALIGN_OUT_LEFT_MID, -5, 0);
 
 /*  notificationState = notificatioManager.AreNewNotificationsAvailable();
-  if(notificationState.IsUpdated()) {
+  if(notificationState.IsUpdated())
+  {
     if(notificationState.Get() == true)
       lv_label_set_text(notificationIcon, NotificationIcon::GetIcon(true));
     else
       lv_label_set_text(notificationIcon, NotificationIcon::GetIcon(false));
-*/
   }
+*/
+  currentDateTime = dateTimeController.CurrentDateTime(); // -> wird in https://github.com/AppKaki/lvgl-wasm/blob/master/clock/DateTimeController.cpp berechnet
 
-  currentDateTime = dateTimeController.CurrentDateTime();
+  if(currentDateTime.IsUpdated())
+    {
+      auto newDateTime = currentDateTime.Get();
 
-  if(currentDateTime.IsUpdated()) {
-    auto newDateTime = currentDateTime.Get();
+      auto dp = date::floor<date::days>(newDateTime);
+      auto time = date::make_time(newDateTime-dp);
+      auto yearMonthDay = date::year_month_day(dp);
 
-    auto dp = date::floor<date::days>(newDateTime);
-    auto time = date::make_time(newDateTime-dp);
-    auto yearMonthDay = date::year_month_day(dp);
+      auto year = (int)yearMonthDay.year();
+      auto month = static_cast<Pinetime::Controllers::DateTime::Months>((unsigned)yearMonthDay.month());
+      auto day = (unsigned)yearMonthDay.day();
+      auto dayOfWeek = static_cast<Pinetime::Controllers::DateTime::Days>(date::weekday(yearMonthDay).iso_encoding());
 
-    auto year = (int)yearMonthDay.year();
-    auto month = static_cast<Pinetime::Controllers::DateTime::Months>((unsigned)yearMonthDay.month());
-    auto day = (unsigned)yearMonthDay.day();
-    auto dayOfWeek = static_cast<Pinetime::Controllers::DateTime::Days>(date::weekday(yearMonthDay).iso_encoding());
+      auto hour = time.hours().count();
+      auto minute = time.minutes().count();
 
-    auto hour = time.hours().count();
-    auto minute = time.minutes().count();
+      char minutesChar[3];
+      sprintf(minutesChar, "%02d", static_cast<int>(minute));
 
-    char minutesChar[3];
-    sprintf(minutesChar, "%02d", static_cast<int>(minute));
+      char hoursChar[3];
+      sprintf(hoursChar, "%02d", static_cast<int>(hour));
 
-    char hoursChar[3];
-    sprintf(hoursChar, "%02d", static_cast<int>(hour));
+      char timeStr[6];
+      sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
 
-    char timeStr[6];
-    sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
+      if(hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
+      {
+        displayedChar[0] = hoursChar[0];
+        displayedChar[1] = hoursChar[1];
+        displayedChar[2] = minutesChar[0];
+        displayedChar[3] = minutesChar[1];
 
-    if(hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3]) {
-      displayedChar[0] = hoursChar[0];
-      displayedChar[1] = hoursChar[1];
-      displayedChar[2] = minutesChar[0];
-      displayedChar[3] = minutesChar[1];
+        lv_label_set_text(label_time, timeStr);
+      }
 
-      lv_label_set_text(label_time, timeStr);
-    }
-
-    if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) {
-      char dateStr[22];
-      sprintf(dateStr, "%s %d %s %d", DayOfWeekToString(dayOfWeek), day, MonthToString(month), year);
-      lv_label_set_text(label_date, dateStr);
+      if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
+      {
+        char dateStr[22];
+        sprintf(dateStr, "%s %d %s %d", DayOfWeekToString(dayOfWeek), day, MonthToString(month), year);
+        lv_label_set_text(label_date, dateStr);
 
 
-      currentYear = year;
-      currentMonth = month;
-      currentDayOfWeek = dayOfWeek;
-      currentDay = day;
-    }
+        currentYear = year;
+        currentMonth = month;
+        currentDayOfWeek = dayOfWeek;
+        currentDay = day;
+      }
   }
 
   // TODO heartbeat = heartBeatController.GetValue();
-  if(heartbeat.IsUpdated()) {
+  if(heartbeat.IsUpdated())
+  {
     char heartbeatBuffer[4];
     sprintf(heartbeatBuffer, "%d", heartbeat.Get());
     lv_label_set_text(heartbeatValue, heartbeatBuffer);
@@ -181,7 +200,8 @@ bool Clock::Refresh() {
   }
 
   // TODO stepCount = stepController.GetValue();
-  if(stepCount.IsUpdated()) {
+  if(stepCount.IsUpdated()) 
+  {
     char stepBuffer[5];
     sprintf(stepBuffer, "1234");  //sprintf(stepBuffer, "%lu", stepCount.Get());
     lv_label_set_text(stepValue, stepBuffer);
