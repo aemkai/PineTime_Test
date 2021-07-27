@@ -9,7 +9,7 @@
 #include "BleIcon.h"
 #include "Symbols.h"
 //#include "components/ble/NotificationManager.h"
-#include "NotificationIcon.h"
+//#include "NotificationIcon.h"
 
 using namespace Pinetime::Applications::Screens;
 extern lv_font_t jetbrains_mono_extrabold_compressed;
