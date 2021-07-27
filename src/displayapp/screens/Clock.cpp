@@ -256,51 +256,51 @@ bool Clock::Refresh()
 
 
 
-const char* MonthShortToString() {
-  return MonthsString[(uint8_t) month];
+const char *Clock::MonthShortToString(Pinetime::Controllers::DateTime::Months month) {
+  return Clock::MonthsString[(uint8_t) month];
 }
 
-const char* MonthShortToStringLow() {
-  return MonthsStringLow[(uint8_t) month];
+const char *Clock::MonthShortToStringLow(Pinetime::Controllers::DateTime::Months month) {
+  return Clock::MonthsStringLow[(uint8_t) month];
 }
 
-const char* MonthsToStringLow() {
-  return MonthsLow[(uint8_t) month];
+const char *Clock::MonthsToStringLow(Pinetime::Controllers::DateTime::Months month) {
+  return Clock::MonthsLow[(uint8_t) month];
 }
 
-const char* DayOfWeekToString() {
-  return DaysString[(uint8_t) dayOfWeek];
+const char *Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days dayOfWeek) {
+  return Clock::DaysString[(uint8_t) dayOfWeek];
 }
 
-const char* DayOfWeekShortToString() {
-  return DaysStringShort[(uint8_t) dayOfWeek];
+const char *Clock::DayOfWeekShortToString(Pinetime::Controllers::DateTime::Days dayOfWeek) {
+  return Clock::DaysStringShort[(uint8_t) dayOfWeek];
 }
 
-const char* DayOfWeekToStringLow() {
-  return DaysStringLow[(uint8_t) dayOfWeek];
+const char *Clock::DayOfWeekToStringLow(Pinetime::Controllers::DateTime::Days dayOfWeek) {
+  return Clock::DaysStringLow[(uint8_t) dayOfWeek];
 }
 
-const char* DayOfWeekShortToStringLow() {
-  return DaysStringShortLow[(uint8_t) dayOfWeek];
+const char *Clock::DayOfWeekShortToStringLow(Pinetime::Controllers::DateTime::Days dayOfWeek) {
+  return Clock::DaysStringShortLow[(uint8_t) dayOfWeek];
 }
 
 void DateTime::Register(Pinetime::System::SystemTask* systemTask) {
   this->systemTask = systemTask;
 }
 
-char const* DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
+char const *Clock::DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
 
-char const* DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
+char const *Clock::DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
 
-char const* DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
+char const *Clock::DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
 
-char const* DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
+char const *Clock::DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
 
-char const* MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
+char const *Clock::MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
 
-char const* MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
+char const *Clock::MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
 
-char const* MonthsLow[] = {
+char const *Clock::MonthsLow[] = {
   "--", "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 
 
