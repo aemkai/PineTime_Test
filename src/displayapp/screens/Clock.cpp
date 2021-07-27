@@ -12,7 +12,7 @@
 //#include "NotificationIcon.h" //#include "NotificationIcon.h"  -> nicht in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 
 /* Definition currentDateTime 
-CtsData currentDateTime;
+CtsData currentDateTime; 
 	currentDateTime.year = m_dateTimeController.Year();
 	currentDateTime.month = static_cast<u_int8_t>(m_dateTimeController.Month());
 	currentDateTime.dayofmonth = m_dateTimeController.Day();
