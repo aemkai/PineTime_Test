@@ -1,15 +1,15 @@
 #include <cstdio>
 
 #include <libs/date/includes/date/date.h>
-#include "DateTimeController.h" //#include "components/datetime/DateTimeController.h"
+#include "DateTimeController.h" //#include "components/datetime/DateTimeController.h"  -> ohne Zusatzpfad in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 #include <libs/lvgl/lvgl.h>
 #include "Clock.h"
 #include "../DisplayApp.h"
 #include "BatteryIcon.h"
 #include "BleIcon.h"
 #include "Symbols.h"
-#include "NotificationManager.h" //#include "components/ble/NotificationManager.h"
-//#include "NotificationIcon.h" //#include "NotificationIcon.h"
+//#include "NotificationManager.h" //#include "components/ble/NotificationManager.h"  -> nicht in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
+//#include "NotificationIcon.h" //#include "NotificationIcon.h"  -> nicht in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 
 using namespace Pinetime::Applications::Screens;
 extern lv_font_t jetbrains_mono_extrabold_compressed;
