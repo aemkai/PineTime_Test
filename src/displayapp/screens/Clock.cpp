@@ -8,7 +8,7 @@
 #include "BatteryIcon.h"
 #include "BleIcon.h"
 #include "Symbols.h"
-#include "components/ble/NotificationManager.h"
+//#include "components/ble/NotificationManager.h"
 #include "NotificationIcon.h"
 
 using namespace Pinetime::Applications::Screens;
