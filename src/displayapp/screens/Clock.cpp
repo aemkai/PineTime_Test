@@ -25,6 +25,8 @@ CtsData currentDateTime;
 using namespace Pinetime::Applications::Screens;
 extern lv_font_t jetbrains_mono_extrabold_compressed;
 extern lv_font_t jetbrains_mono_bold_20;
+extern lv_font_t jetbrains_mono_bold_42;
+extern lv_font_t jetbrains_mono_bold_76;
 extern lv_style_t* LabelBigStyle;
 
 static void event_handler(lv_obj_t * obj, lv_event_t event) {
@@ -177,6 +179,9 @@ bool Clock::Refresh()
 	char timeStr[6];
 	sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
 
+	char timeStr[4];
+	char secondsStr[3];	  
+	  
     	if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3]  || secondsChar[0] != displayedChar[4] || secondsChar[1] != displayedChar[5])
 	{
 		displayedChar[0] = hoursChar[0];
@@ -187,8 +192,8 @@ bool Clock::Refresh()
 		displayedChar[5] = secondsChar[1];	  
 
 	  	//char timeStr[6];
-		char timeStr[4];
-	  	char secondsStr[3];
+		//char timeStr[4];
+	  	//char secondsStr[3];
       	}
 	  
 	// sprintf(timeStr, "%c%c:%c%c:%c%c", hoursChar[0], hoursChar[1], minutesChar[0], minutesChar[1], secondsChar[0], secondsChar[1]);
@@ -212,7 +217,8 @@ bool Clock::Refresh()
 	if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
 	{
 		char dateStr[22];
-		sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekToString(), day, month, year);		
+		//sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekToString(), day, month, year);		
+		sprintf(dateStr, "%s %d.%02d.%d", DayOfWeekToString(), day, month, year);		
 
 		lv_label_set_text(label_date, dateStr);
 		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
@@ -250,51 +256,51 @@ bool Clock::Refresh()
 
 
 
-const char* DateTime::MonthShortToString() {
-  return DateTime::MonthsString[(uint8_t) month];
+const char* MonthShortToString() {
+  return MonthsString[(uint8_t) month];
 }
 
-const char* DateTime::MonthShortToStringLow() {
-  return DateTime::MonthsStringLow[(uint8_t) month];
+const char* MonthShortToStringLow() {
+  return MonthsStringLow[(uint8_t) month];
 }
 
-const char* DateTime::MonthsToStringLow() {
-  return DateTime::MonthsLow[(uint8_t) month];
+const char* MonthsToStringLow() {
+  return MonthsLow[(uint8_t) month];
 }
 
-const char* DateTime::DayOfWeekToString() {
-  return DateTime::DaysString[(uint8_t) dayOfWeek];
+const char* DayOfWeekToString() {
+  return DaysString[(uint8_t) dayOfWeek];
 }
 
-const char* DateTime::DayOfWeekShortToString() {
-  return DateTime::DaysStringShort[(uint8_t) dayOfWeek];
+const char* DayOfWeekShortToString() {
+  return DaysStringShort[(uint8_t) dayOfWeek];
 }
 
-const char* DateTime::DayOfWeekToStringLow() {
-  return DateTime::DaysStringLow[(uint8_t) dayOfWeek];
+const char* DayOfWeekToStringLow() {
+  return DaysStringLow[(uint8_t) dayOfWeek];
 }
 
-const char* DateTime::DayOfWeekShortToStringLow() {
-  return DateTime::DaysStringShortLow[(uint8_t) dayOfWeek];
+const char* DayOfWeekShortToStringLow() {
+  return DaysStringShortLow[(uint8_t) dayOfWeek];
 }
 
 void DateTime::Register(Pinetime::System::SystemTask* systemTask) {
   this->systemTask = systemTask;
 }
 
-char const* DateTime::DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
+char const* DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
 
-char const* DateTime::DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
+char const* DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
 
-char const* DateTime::DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
+char const* DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
 
-char const* DateTime::DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
+char const* DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
 
-char const* DateTime::MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
+char const* MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
 
-char const* DateTime::MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
+char const* MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
 
-char const* DateTime::MonthsLow[] = {
+char const* MonthsLow[] = {
   "--", "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 
 
