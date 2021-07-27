@@ -43,7 +43,9 @@ Clock::Clock(DisplayApp* app,
   displayedChar[2] = 0;
   displayedChar[3] = 0;
   displayedChar[4] = 0;
-
+  displayedChar[5] = 0;
+  displayedChar[6] = 0;
+						   
   batteryIcon = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_text(batteryIcon, Symbols::batteryFull);
   lv_obj_align(batteryIcon, lv_scr_act(), LV_ALIGN_IN_TOP_RIGHT, -5, 2);
@@ -65,9 +67,18 @@ Clock::Clock(DisplayApp* app,
   lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 60);
 
   label_time = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_style(label_time, LV_LABEL_STYLE_MAIN, LabelBigStyle);
-  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 0);
+  //lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
+  lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_76);
 
+  label_sec = lv_label_create(lv_scr_act(), nullptr);
+  //lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
+  lv_obj_set_style_local_text_font(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_42);
+  lv_obj_set_style_local_text_color(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCCCC00));
+
+
+  lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 0);
+  lv_obj_align(label_sec, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, 0, 0);
+						   
   backgroundLabel = lv_label_create(lv_scr_act(), nullptr);
   backgroundLabel->user_data = this;
   lv_obj_set_click(backgroundLabel, true);
@@ -75,9 +86,8 @@ Clock::Clock(DisplayApp* app,
   lv_label_set_long_mode(backgroundLabel, LV_LABEL_LONG_CROP);
   lv_obj_set_size(backgroundLabel, 240, 240);
   lv_obj_set_pos(backgroundLabel, 0, 0);
-  lv_label_set_text(backgroundLabel, "");
-
-
+  lv_label_set_text(backgroundLabel, "");						   
+						   
   heartbeatIcon = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_text(heartbeatIcon, Symbols::heartBeat);
   lv_obj_align(heartbeatIcon, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 5, -2);
@@ -141,51 +151,77 @@ bool Clock::Refresh()
 
   if(currentDateTime.IsUpdated())
     {
-      auto newDateTime = currentDateTime.Get();
+	auto newDateTime = currentDateTime.Get();
 
-      auto dp = date::floor<date::days>(newDateTime);
-      auto time = date::make_time(newDateTime-dp);
-      auto yearMonthDay = date::year_month_day(dp);
+	auto dp = date::floor<date::days>(newDateTime);
+	auto time = date::make_time(newDateTime-dp);
+	auto yearMonthDay = date::year_month_day(dp);
 
-      auto year = (int)yearMonthDay.year();
-      auto month = static_cast<Pinetime::Controllers::DateTime::Months>((unsigned)yearMonthDay.month());
-      auto day = (unsigned)yearMonthDay.day();
-      auto dayOfWeek = static_cast<Pinetime::Controllers::DateTime::Days>(date::weekday(yearMonthDay).iso_encoding());
+	auto year = (int)yearMonthDay.year();
+	auto month = static_cast<Pinetime::Controllers::DateTime::Months>((unsigned)yearMonthDay.month());
+	auto day = (unsigned)yearMonthDay.day();
+	auto dayOfWeek = static_cast<Pinetime::Controllers::DateTime::Days>(date::weekday(yearMonthDay).iso_encoding());
 
-      auto hour = time.hours().count();
-      auto minute = time.minutes().count();
+	auto hour = time.hours().count();
+	auto minute = time.minutes().count();
+	auto second = time.seconds().count();
 
-      char minutesChar[3];
-      sprintf(minutesChar, "%02d", static_cast<int>(minute));
+	char secondsChar[3];
+	sprintf(secondsChar, "%02d", static_cast<int>(second));
+	char minutesChar[3];
+	sprintf(minutesChar, "%02d", static_cast<int>(minute));
 
-      char hoursChar[3];
-      sprintf(hoursChar, "%02d", static_cast<int>(hour));
+	char hoursChar[3];
+	sprintf(hoursChar, "%02d", static_cast<int>(hour));
 
-      char timeStr[6];
-      sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
+	char timeStr[6];
+	sprintf(timeStr, "%c%c:%c%c", hoursChar[0],hoursChar[1],minutesChar[0], minutesChar[1]);
 
-      if(hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
-      {
-        displayedChar[0] = hoursChar[0];
-        displayedChar[1] = hoursChar[1];
-        displayedChar[2] = minutesChar[0];
-        displayedChar[3] = minutesChar[1];
+    	if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3]  || secondsChar[0] != displayedChar[4] || secondsChar[1] != displayedChar[5])
+	{
+		displayedChar[0] = hoursChar[0];
+		displayedChar[1] = hoursChar[1];
+		displayedChar[2] = minutesChar[0];
+		displayedChar[3] = minutesChar[1];
+		displayedChar[4] = secondsChar[0];
+		displayedChar[5] = secondsChar[1];	  
 
-        lv_label_set_text(label_time, timeStr);
-      }
+	  	//char timeStr[6];
+		char timeStr[4];
+	  	char secondsStr[3];
+      	}
+	  
+	// sprintf(timeStr, "%c%c:%c%c:%c%c", hoursChar[0], hoursChar[1], minutesChar[0], minutesChar[1], secondsChar[0], secondsChar[1]);
+	// lv_label_set_text(label_time, timeStr);
 
-      if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
-      {
-        char dateStr[22];
-        sprintf(dateStr, "%s %d %s %d", DayOfWeekToString(dayOfWeek), day, MonthToString(month), year);
-        lv_label_set_text(label_date, dateStr);
+	// if (settingsController.GetClockType() == Controllers::Settings::ClockType::H12) {
+	// lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, 0, 0);
+	// } else {
+	// lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, 0);
+	// }
+	sprintf(timeStr, "%c%c:%c%c", hoursChar[0], hoursChar[1], minutesChar[0], minutesChar[1]);
+	  lv_label_set_text(label_time, timeStr);
+	sprintf(secondsStr, "%c%c", secondsChar[0], secondsChar[1]);	  
+	lv_label_set_text(label_sec, secondsStr);
 
+	lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -35);
+	lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
+		  
+	 	  
 
-        currentYear = year;
-        currentMonth = month;
-        currentDayOfWeek = dayOfWeek;
-        currentDay = day;
-      }
+	if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
+	{
+		char dateStr[22];
+		sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekToString(), day, month, year);		
+
+		lv_label_set_text(label_date, dateStr);
+		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
+
+		currentYear = year;
+		currentMonth = month;
+		currentDayOfWeek = dayOfWeek;
+		currentDay = day;
+	}
   }
 
   // TODO heartbeat = heartBeatController.GetValue();
@@ -220,32 +256,20 @@ const char *Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days dayOf
   return Clock::DaysString[static_cast<uint8_t>(dayOfWeek)];
 }
 
-char const *Clock::DaysString[] = {
-        "",
-        "MONDAY",
-        "TUESDAY",
-        "WEDNESDAY",
-        "THURSDAY",
-        "FRIDAY",
-        "SATURDAY",
-        "SUNDAY"
-};
+char const* DateTime::DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
 
-char const *Clock::MonthsString[] = {
-        "",
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN",
-        "JUL",
-        "AUG",
-        "SEP",
-        "OCT",
-        "NOV",
-        "DEC"
-};
+char const* DateTime::DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
+
+char const* DateTime::DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
+
+char const* DateTime::DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
+
+char const* DateTime::MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
+
+char const* DateTime::MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
+
+char const* DateTime::MonthsLow[] = {
+  "--", "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
 
 void Clock::OnObjectEvent(lv_obj_t *obj, lv_event_t event) {
   if(obj == backgroundLabel) {
