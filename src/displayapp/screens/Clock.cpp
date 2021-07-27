@@ -248,19 +248,56 @@ bool Clock::Refresh()
   return running;
 }
 
-const char *Clock::MonthToString(Pinetime::Controllers::DateTime::Months month) {
-  return Clock::MonthsString[static_cast<uint8_t>(month)];
+
+
+const char* DateTime::MonthShortToString() {
+  return DateTime::MonthsString[(uint8_t) month];
 }
 
-const char *Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days dayOfWeek) {
-  return Clock::DaysString[static_cast<uint8_t>(dayOfWeek)];
+const char* DateTime::MonthShortToStringLow() {
+  return DateTime::MonthsStringLow[(uint8_t) month];
 }
 
-char const *Clock::DaysString[] =
- 	{"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
+const char* DateTime::MonthsToStringLow() {
+  return DateTime::MonthsLow[(uint8_t) month];
+}
 
-char const *Clock::MonthsString[] = 
-	{"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
+const char* DateTime::DayOfWeekToString() {
+  return DateTime::DaysString[(uint8_t) dayOfWeek];
+}
+
+const char* DateTime::DayOfWeekShortToString() {
+  return DateTime::DaysStringShort[(uint8_t) dayOfWeek];
+}
+
+const char* DateTime::DayOfWeekToStringLow() {
+  return DateTime::DaysStringLow[(uint8_t) dayOfWeek];
+}
+
+const char* DateTime::DayOfWeekShortToStringLow() {
+  return DateTime::DaysStringShortLow[(uint8_t) dayOfWeek];
+}
+
+void DateTime::Register(Pinetime::System::SystemTask* systemTask) {
+  this->systemTask = systemTask;
+}
+
+char const* DateTime::DaysStringLow[] = {"--", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
+
+char const* DateTime::DaysStringShortLow[] = {"--", "Mon", "Die", "Mit", "Don", "Fre", "Sam", "Son"};
+
+char const* DateTime::DaysStringShort[] = {"--", "MON", "DIE", "MIT", "DON", "FRE", "SAM", "SON"};
+
+char const* DateTime::DaysString[] = {"--", "MONTAG", "DIENSTAG", "MITTWOCH", "DONNERSTAG", "FREITAG", "SAMSTAG", "SONNTAG"};
+
+char const* DateTime::MonthsString[] = {"--", "JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"};
+
+char const* DateTime::MonthsStringLow[] = {"--", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"};
+
+char const* DateTime::MonthsLow[] = {
+  "--", "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"};
+
+
 
 
 void Clock::OnObjectEvent(lv_obj_t *obj, lv_event_t event) {
