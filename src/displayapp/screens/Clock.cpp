@@ -260,8 +260,8 @@ bool Clock::Refresh()
 
   lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
   lv_obj_set_size(singleArc, 10, 10);
-  lv_led_set_brightness(singleArc, 150);
-  lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
+  //lv_led_set_brightness(singleArc, 150);
+  //lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
   
   lv_led_off(singleArc);
   
@@ -270,8 +270,8 @@ bool Clock::Refresh()
 
   lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 5);
   lv_obj_set_size(singleArc2, 20, 20);
-  lv_led_set_brightness(singleArc2, 150);
-  lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
+  //lv_led_set_brightness(singleArc2, 150);
+  //lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
   
   lv_led_on(singleArc2);
 	
