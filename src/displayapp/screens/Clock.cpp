@@ -281,8 +281,8 @@ bool Clock::Refresh()
     lv_obj_align(canvas, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_canvas_fill_bg(canvas, LV_COLOR_SILVER);
 
-    lv_canvas_draw_rect(canvas, 0, 0, 320, 160, &style);
-    lv_canvas_draw_text(canvas, 100, 20, 120, &style, "Red text canvas", LV_LABEL_ALIGN_LEFT);
+    lv_canvas_draw_rect(canvas, 0, 0, 320, 160);
+   
 
 
 	
