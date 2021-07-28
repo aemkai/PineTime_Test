@@ -262,7 +262,7 @@ bool Clock::Refresh()
   lv_obj_set_size(singleArc, 10, 10);
   //lv_led_set_brightness(singleArc, 150);
   //lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
-	lv_led_set_color(singleArc, lv_color_hex(0xff0080));
+//	lv_led_set_color(singleArc, lv_color_hex(0xff0080));
   
   lv_led_off(singleArc);
   
