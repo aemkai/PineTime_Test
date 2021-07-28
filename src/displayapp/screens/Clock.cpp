@@ -272,9 +272,9 @@ bool Clock::Refresh()
   lv_obj_set_style_local_bg_opa(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
   lv_obj_set_style_local_border_width(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
   lv_obj_set_style_local_radius(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-  lv_arc_set_end_angle(singleArc, 360);
-  lv_obj_set_size(singleArc, 15, 15);
+  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
+  lv_arc_set_end_angle(singleArc2, 360);
+  lv_obj_set_size(singleArc2, 15, 15);
   //lv_arc_set_range(singleArc, 0, 500);
   lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
 
