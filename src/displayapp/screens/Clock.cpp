@@ -255,33 +255,29 @@ bool Clock::Refresh()
 	
 /* Binary Watch */
 /****************/
-  singleArc = lv_btn_create(lv_scr_act(), nullptr);
+  singleArc = lv_arc_create(lv_scr_act(), nullptr);
 
-  //lv_obj_set_style_local_bg_opa(singleArc, LV_PART_MAIN, LV_STATE_DEFAULT, LV_OPA_0);
-  //lv_obj_set_style_local_bg_color(singleArc, LV_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF00FF));
-  //lv_obj_set_style_local_radius(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-  lv_obj_set_style_local_line_color(singleArc, LV_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF00FF));
-  lv_obj_set_size(singleArc, 10, 10);
+  lv_obj_set_style_local_bg_opa(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+  lv_obj_set_style_local_border_width(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+  lv_obj_set_style_local_radius(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+  lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+  lv_arc_set_end_angle(singleArc, 360);
+  lv_obj_set_size(singleArc, 20, 20);
   //lv_arc_set_range(singleArc, 0, 500);
-  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
+  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);;
   
   
-  singleArc2 = lv_led_create(lv_scr_act(), nullptr);
+  singleArc2 = lv_arc_create(lv_scr_act(), nullptr);
 
-  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 15);
-  lv_obj_set_size(singleArc2, 20, 20);
-  lv_obj_set_style_local_bg_color(singleArc, LV_LED_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFFFFFF));
-  //lv_led_set_brightness(singleArc2, 150);
-  //lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
-  
-  lv_led_on(singleArc2);
-	
-	lv_obj_t * canvas = lv_canvas_create(lv_scr_act(), NULL);
-    lv_canvas_set_buffer(canvas, cbuf, CANVAS_WIDTH, CANVAS_HEIGHT, LV_IMG_CF_TRUE_COLOR);
-    lv_obj_align(canvas, NULL, LV_ALIGN_CENTER, 0, 0);
-    lv_canvas_fill_bg(canvas, LV_COLOR_SILVER);
+  lv_obj_set_style_local_bg_opa(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+  lv_obj_set_style_local_border_width(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+  lv_obj_set_style_local_radius(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+  lv_arc_set_end_angle(singleArc, 360);
+  lv_obj_set_size(singleArc, 15, 15);
+  //lv_arc_set_range(singleArc, 0, 500);
+  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
 
-    lv_canvas_draw_rect(canvas, 0, 0, 320, 160);
    
 
 
