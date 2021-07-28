@@ -266,7 +266,7 @@ bool Clock::Refresh()
   //lv_arc_set_range(singleArc, 0, 500);
   lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
   
-  
+  /*
   singleArc2 = lv_checkbox_create(lv_scr_act(), nullptr);
 
   lv_obj_set_style_local_bg_opa(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
@@ -276,7 +276,7 @@ bool Clock::Refresh()
   lv_obj_set_size(singleArc2, 20, 20);
   //lv_arc_set_range(singleArc, 0, 500);
   lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 25);
-	
+	*/
 	
 	
 	
