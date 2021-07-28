@@ -299,7 +299,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(minArc3, 360);
 	lv_obj_set_size(minArc3, 20, 20);
 	//lv_arc_set_range(minArc3, 0, 100);
-	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
@@ -311,7 +311,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(minArc2, 360);
 	lv_obj_set_size(minArc2, 20, 20);
 	//lv_arc_set_range(minArc2, 0, 100);
-	lv_obj_align(minArc2, minArc3, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(minArc2, minArc3, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 	
@@ -323,7 +323,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(minArc1, 360);
 	lv_obj_set_size(minArc1, 20, 20);
 	//lv_arc_set_range(minArc1, 0, 100);
-	lv_obj_align(minArc1, minArc2, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(minArc1, minArc2, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 	
@@ -335,7 +335,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(minArc0, 360);
 	lv_obj_set_size(minArc0, 20, 20);
 	//lv_arc_set_range(minArc0, 0, 100);
-	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
@@ -365,7 +365,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(hourArc3, 360);
 	lv_obj_set_size(hourArc3, 20, 20);
 	//lv_arc_set_range(hourArc3, 0, 100);
-	lv_obj_align(hourArc3, hourArc4, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(hourArc3, hourArc4, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(hourArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
@@ -377,7 +377,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(hourArc2, 360);
 	lv_obj_set_size(hourArc2, 20, 20);
 	//lv_arc_set_range(hourArc2, 0, 100);
-	lv_obj_align(hourArc2, hourArc3, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(hourArc2, hourArc3, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(hourArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 	
@@ -389,7 +389,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(hourArc1, 360);
 	lv_obj_set_size(hourArc1, 20, 20);
 	//lv_arc_set_range(hourArc1, 0, 100);
-	lv_obj_align(hourArc1, hourArc2, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(hourArc1, hourArc2, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(hourArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 	
@@ -401,12 +401,11 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(hourArc0, 360);
 	lv_obj_set_size(hourArc0, 20, 20);
 	//lv_arc_set_range(hourArc0, 0, 100);
-	lv_obj_align(hourArc0, hourArc1, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(hourArc0, hourArc1, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
 
-	
 	
 	
 	
