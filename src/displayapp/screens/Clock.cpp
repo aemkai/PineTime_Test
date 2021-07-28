@@ -263,7 +263,8 @@ bool Clock::Refresh()
   //lv_led_set_brightness(singleArc, 150);
   //lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
 //	lv_led_set_color(singleArc, lv_color_hex(0xff0080));
-  
+    lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
+	
   lv_led_off(singleArc);
   
   
@@ -273,7 +274,7 @@ bool Clock::Refresh()
   lv_obj_set_size(singleArc2, 20, 20);
   //lv_led_set_brightness(singleArc2, 150);
   //lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
-	  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFFFF00));
   
   lv_led_on(singleArc2);
 	
