@@ -3,7 +3,7 @@
 #include <libs/date/includes/date/date.h>
 #include "DateTimeController.h" //#include "components/datetime/DateTimeController.h"  -> ohne Zusatzpfad in https://github.com/AppKaki/lvgl-wasm/tree/master/clock
 #include <libs/lvgl/lvgl.h>
-#include <lvgl/lvgl.h>
+#include <../lvgl.h>
 #include "Clock.h"
 #include "../DisplayApp.h"
 #include "BatteryIcon.h"
