@@ -263,10 +263,10 @@ bool Clock::Refresh()
   lv_obj_set_style_local_line_color(singleArc,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
   lv_arc_set_end_angle(singleArc, 360);
   lv_obj_set_size(singleArc, 20, 20);
-  //lv_arc_set_range(singleArc, 0, 1);
+  lv_arc_set_range(singleArc, 0, 100);
   lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);;
   
-  lv_arc_set_value(singleArc, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+  //lv_arc_set_value(singleArc, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 	
 	
 	
@@ -278,10 +278,10 @@ bool Clock::Refresh()
   lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
   lv_arc_set_end_angle(singleArc2, 360);
   lv_obj_set_size(singleArc2, 15, 15);
-  //lv_arc_set_range(singleArc, 0, 1);
+  lv_arc_set_range(singleArc2, 0, 100);
   lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 25);
 
-  lv_arc_set_value(singleArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+  //lv_arc_set_value(singleArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
 
 	
