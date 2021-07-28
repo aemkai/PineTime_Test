@@ -256,8 +256,6 @@ bool Clock::Refresh()
 /* Binary Watch */
 /****************/
 
-  singleArc = lv_led_create(lv_scr_act(), nullptr);
-
   singleArc = lv_btn_create(lv_scr_act(), nullptr);
 
   lv_obj_set_style_local_bg_opa(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
