@@ -110,6 +110,160 @@ Clock::Clock(DisplayApp* app,
   stepIcon = lv_label_create(lv_scr_act(), nullptr);
   lv_label_set_text(stepIcon, Symbols::shoe);
   lv_obj_align(stepIcon, stepValue, LV_ALIGN_OUT_LEFT_MID, -5, 0);
+						   
+/* Binary Watch */
+	/****************/
+
+	/* 2 Möglichkeiten, Anzeige zu beeinflussen:
+		-> border width: leerer Ring (=1) vs. gefüllt (=size/2)
+		-> set_value: grau (val=min) vs. farbig (val=max)
+	*/	
+	/********************/
+	/* Generate Circles */
+	/********************/
+	
+	/* for minutes */
+	/////////////////
+	
+	minArc5 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc5,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc5, 360);
+	lv_obj_set_size(minArc5, 20, 20);
+	//lv_arc_set_range(minArc5, 0, 100);
+	lv_obj_align(minArc5, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
+	// nicht in Sim
+	//lv_arc_set_value(minArc5, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
+	
+	minArc4 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc4, 360);
+	lv_obj_set_size(minArc4, 20, 20);
+	//lv_arc_set_range(minArc4, 10, 00);
+	lv_obj_align(minArc4, minArc5, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(minArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
+	
+	minArc3 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc3, 360);
+	lv_obj_set_size(minArc3, 20, 20);
+	//lv_arc_set_range(minArc3, 10, 00);
+	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(minArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+
+	minArc2 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc2, 360);
+	lv_obj_set_size(minArc2, 20, 20);
+	//lv_arc_set_range(minArc2, 10, 00);
+	lv_obj_align(minArc2, minArc3, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(minArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	
+	minArc1 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc1, 360);
+	lv_obj_set_size(minArc1, 20, 20);
+	//lv_arc_set_range(minArc1, 10, 00);
+	lv_obj_align(minArc1, minArc2, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(minArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	
+	minArc0 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(minArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(minArc0, 360);
+	lv_obj_set_size(minArc0, 20, 20);
+	//lv_arc_set_range(minArc0, 10, 00);
+	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(minArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+
+
+
+	
+	/* for hours */
+	/////////////////
+
+	hourArc4 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(hourArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(hourArc4, 360);
+	lv_obj_set_size(hourArc4, 20, 20);
+	//lv_arc_set_range(hourArc4, 0, 100);
+	lv_obj_align(hourArc4, minArc4, LV_ALIGN_OUT_BOTTOM_MID, 0, 5);	// 10px unter minArc4
+	// nicht in Sim
+	//lv_arc_set_value(hourArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
+	
+	hourArc3 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(hourArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(hourArc3, 360);
+	lv_obj_set_size(hourArc3, 20, 20);
+	//lv_arc_set_range(hourArc3, 10, 00);
+	lv_obj_align(hourArc3, hourArc4, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(hourArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+
+	hourArc2 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(hourArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(hourArc2, 360);
+	lv_obj_set_size(hourArc2, 20, 20);
+	//lv_arc_set_range(hourArc2, 10, 00);
+	lv_obj_align(hourArc2, hourArc3, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(hourArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	
+	hourArc1 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(hourArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(hourArc1, 360);
+	lv_obj_set_size(hourArc1, 20, 20);
+	//lv_arc_set_range(hourArc1, 10, 00);
+	lv_obj_align(hourArc1, hourArc2, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(hourArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	
+	hourArc0 = lv_arc_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_opa(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+	lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+	lv_obj_set_style_local_radius(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+	lv_obj_set_style_local_line_color(hourArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+	lv_arc_set_end_angle(hourArc0, 360);
+	lv_obj_set_size(hourArc0, 20, 20);
+	//lv_arc_set_range(hourArc0, 10, 00);
+	lv_obj_align(hourArc0, hourArc1, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+	// nicht in Sim
+	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)						   
+						   
+						   
 }
 
 Clock::~Clock() {
@@ -251,165 +405,6 @@ bool Clock::Refresh()
     lv_obj_align(stepIcon, stepValue, LV_ALIGN_OUT_LEFT_MID, -5, 0);
   }
 
-	
-	
-/* Binary Watch */
-/****************/
-
-/* 2 Möglichkeiten, Anzeige zu beeinflussen:
-	-> border width: leerer Ring (=1) vs. gefüllt (=size/2)
-	-> set_value: grau (val=min) vs. farbig (val=max)
-*/	
-	/********************/
-	/* Generate Circles */
-	/********************/
-	
-	/* for minutes */
-	/////////////////
-	
-	minArc5 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc5,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc5, 360);
-	lv_obj_set_size(minArc5, 20, 20);
-	//lv_arc_set_range(minArc5, 0, 100);
-	lv_obj_align(minArc5, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
-	// nicht in Sim
-	//lv_arc_set_value(minArc5, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
-	
-	minArc4 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc4, 360);
-	lv_obj_set_size(minArc4, 20, 20);
-	//lv_arc_set_range(minArc4, 0, 100);
-	lv_obj_align(minArc4, minArc5, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
-	
-	minArc3 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc3, 360);
-	lv_obj_set_size(minArc3, 20, 20);
-	//lv_arc_set_range(minArc3, 0, 100);
-	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-/*
-	minArc2 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc2, 360);
-	lv_obj_set_size(minArc2, 20, 20);
-	//lv_arc_set_range(minArc2, 0, 100);
-	lv_obj_align(minArc2, minArc3, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(minArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-	
-	minArc1 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc1, 360);
-	lv_obj_set_size(minArc1, 20, 20);
-	//lv_arc_set_range(minArc1, 0, 100);
-	lv_obj_align(minArc1, minArc2, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(minArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-	
-	minArc0 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc0, 360);
-	lv_obj_set_size(minArc0, 20, 20);
-	//lv_arc_set_range(minArc0, 0, 100);
-	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(minArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-*/
-
-
-	
-	/* for hours */
-	/////////////////
-
-	hourArc4 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc4, 360);
-	lv_obj_set_size(hourArc4, 20, 20);
-	//lv_arc_set_range(hourArc4, 0, 100);
-	lv_obj_align(hourArc4, minArc4, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);	// 10px unter minArc4
-	// nicht in Sim
-	//lv_arc_set_value(hourArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
-/*	
-	hourArc3 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc3, 360);
-	lv_obj_set_size(hourArc3, 20, 20);
-	//lv_arc_set_range(hourArc3, 0, 100);
-	lv_obj_align(hourArc3, hourArc4, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-
-	hourArc2 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc2, 360);
-	lv_obj_set_size(hourArc2, 20, 20);
-	//lv_arc_set_range(hourArc2, 0, 100);
-	lv_obj_align(hourArc2, hourArc3, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-	
-	hourArc1 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc1, 360);
-	lv_obj_set_size(hourArc1, 20, 20);
-	//lv_arc_set_range(hourArc1, 0, 100);
-	lv_obj_align(hourArc1, hourArc2, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-	
-	hourArc0 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc0, 360);
-	lv_obj_set_size(hourArc0, 20, 20);
-	//lv_arc_set_range(hourArc0, 0, 100);
-	lv_obj_align(hourArc0, hourArc1, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-
-*/
-	
-	
-	
-	
 	
   return running;
 }
