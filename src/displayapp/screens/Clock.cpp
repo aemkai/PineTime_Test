@@ -258,25 +258,26 @@ bool Clock::Refresh()
 
   singleArc = lv_led_create(lv_scr_act(), nullptr);
 
-  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
-  lv_obj_set_size(singleArc, 10, 10);
-  //lv_led_set_brightness(singleArc, 150);
-  //lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
-//	lv_led_set_color(singleArc, lv_color_hex(0xff0080));
-    lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
-	
-  lv_led_off(singleArc);
-  
-  
-  singleArc2 = lv_led_create(lv_scr_act(), nullptr);
+  singleArc = lv_btn_create(lv_scr_act(), nullptr);
 
-  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 15);
-  lv_obj_set_size(singleArc2, 20, 20);
-  //lv_led_set_brightness(singleArc2, 150);
-  //lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
-	  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFFFF00));
+  lv_obj_set_style_local_bg_opa(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+  lv_obj_set_style_local_border_width(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+  lv_obj_set_style_local_radius(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 3);
+  lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+  lv_obj_set_size(singleArc, 10, 10);
+  //lv_arc_set_range(singleArc, 0, 500);
+  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
   
-  lv_led_on(singleArc2);
+  
+  singleArc2 = lv_checkbox_create(lv_scr_act(), nullptr);
+
+  lv_obj_set_style_local_bg_opa(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+  lv_obj_set_style_local_border_width(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+  lv_obj_set_style_local_radius(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0xFFFF00));
+  lv_obj_set_size(singleArc2, 20, 20);
+  //lv_arc_set_range(singleArc, 0, 500);
+  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 25);
 	
 	
 	
