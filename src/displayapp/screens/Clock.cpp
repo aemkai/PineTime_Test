@@ -256,15 +256,24 @@ bool Clock::Refresh()
 /* Binary Watch */
 /****************/
 
-  singleArc = lv_arc_create(lv_scr_act(), nullptr);
+  singleArc = lv_led_create(lv_scr_act(), nullptr);
 
-  lv_obj_set_style_local_bg_opa(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-  lv_obj_set_style_local_border_width(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-  lv_obj_set_style_local_radius(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 20);
-  lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-  lv_arc_set_end_angle(singleArc, 360);
-  lv_obj_set_size(singleArc, 20, 20);
-  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);	
+  lv_obj_align(singleArc, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
+  lv_obj_set_size(singleArc, 10, 10);
+  lv_led_set_brightness(singleArc, 150);
+  lv_led_set_color(singleArc, lv_palette_main(LV_PALETTE_RED));
+  
+  lv_led_off(singleArc);
+  
+  
+  singleArc2 = lv_led_create(lv_scr_act(), nullptr);
+
+  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 5);
+  lv_obj_set_size(singleArc2, 20, 20);
+  lv_led_set_brightness(singleArc2, 150);
+  lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
+  
+  lv_led_on(singleArc2);
 	
 	
 	
