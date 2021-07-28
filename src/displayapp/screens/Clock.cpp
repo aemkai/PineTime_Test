@@ -268,7 +268,7 @@ bool Clock::Refresh()
   
   singleArc2 = lv_led_create(lv_scr_act(), nullptr);
 
-  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 5);
+  lv_obj_align(singleArc2, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 35, 15);
   lv_obj_set_size(singleArc2, 20, 20);
   //lv_led_set_brightness(singleArc2, 150);
   //lv_led_set_color(singleArc2, lv_palette_main(LV_PALETTE_RED));
