@@ -732,49 +732,49 @@ Function[950]:
  - func[684] sig=4 <lv_color_hex(unsigned int)>
  - func[685] sig=6 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[686] sig=4 <event_handler(_lv_obj_t*, unsigned char)>
- - func[687] sig=23 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
- - func[688] sig=6 <lv_color_make(unsigned char, unsigned char, unsigned char)>
- - func[689] sig=2 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[690] sig=1 <Pinetime::Applications::Screens::Clock::Refresh()>
- - func[691] sig=32 <Pinetime::Controllers::Battery::PercentRemaining() const>
- - func[692] sig=0 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
- - func[693] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
- - func[694] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
- - func[695] sig=1 <Pinetime::Controllers::Battery::IsCharging() const>
- - func[696] sig=1 <Pinetime::Controllers::Battery::IsPowerPresent() const>
- - func[697] sig=1 <Pinetime::Controllers::Ble::IsConnected() const>
- - func[698] sig=0 <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
- - func[699] sig=1 <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
- - func[700] sig=1 <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
- - func[701] sig=9 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
- - func[702] sig=0 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[703] sig=1 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
- - func[704] sig=1 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
- - func[705] sig=1 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[706] sig=12 <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[707] sig=4 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
- - func[708] sig=0 <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
- - func[709] sig=1 <date::year_month_day::year() const>
- - func[710] sig=1 <date::year::operator int() const>
- - func[711] sig=1 <date::year_month_day::month() const>
- - func[712] sig=1 <date::month::operator unsigned int() const>
- - func[713] sig=1 <date::year_month_day::day() const>
- - func[714] sig=1 <date::day::operator unsigned int() const>
- - func[715] sig=1 <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
- - func[716] sig=0 <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[717] sig=1 <date::weekday::iso_encoding() const>
- - func[718] sig=1 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
- - func[719] sig=1 <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
- - func[720] sig=1 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
- - func[721] sig=1 <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
- - func[722] sig=9 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
- - func[723] sig=9 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
- - func[724] sig=1 <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
- - func[725] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
- - func[726] sig=6 <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
- - func[727] sig=6 <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[728] sig=6 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[729] sig=6 <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[687] sig=6 <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
+ - func[688] sig=6 <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[689] sig=6 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[690] sig=6 <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[691] sig=23 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
+ - func[692] sig=6 <lv_color_make(unsigned char, unsigned char, unsigned char)>
+ - func[693] sig=2 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
+ - func[694] sig=1 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[695] sig=32 <Pinetime::Controllers::Battery::PercentRemaining() const>
+ - func[696] sig=0 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
+ - func[697] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
+ - func[698] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
+ - func[699] sig=1 <Pinetime::Controllers::Battery::IsCharging() const>
+ - func[700] sig=1 <Pinetime::Controllers::Battery::IsPowerPresent() const>
+ - func[701] sig=1 <Pinetime::Controllers::Ble::IsConnected() const>
+ - func[702] sig=0 <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
+ - func[703] sig=1 <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
+ - func[704] sig=1 <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
+ - func[705] sig=9 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
+ - func[706] sig=0 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[707] sig=1 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
+ - func[708] sig=1 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
+ - func[709] sig=1 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[710] sig=12 <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[711] sig=4 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
+ - func[712] sig=0 <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
+ - func[713] sig=1 <date::year_month_day::year() const>
+ - func[714] sig=1 <date::year::operator int() const>
+ - func[715] sig=1 <date::year_month_day::month() const>
+ - func[716] sig=1 <date::month::operator unsigned int() const>
+ - func[717] sig=1 <date::year_month_day::day() const>
+ - func[718] sig=1 <date::day::operator unsigned int() const>
+ - func[719] sig=1 <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
+ - func[720] sig=0 <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[721] sig=1 <date::weekday::iso_encoding() const>
+ - func[722] sig=1 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
+ - func[723] sig=1 <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
+ - func[724] sig=1 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
+ - func[725] sig=1 <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
+ - func[726] sig=9 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
+ - func[727] sig=9 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
+ - func[728] sig=1 <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
+ - func[729] sig=1 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
  - func[730] sig=0 <bool std::__2::chrono::operator!=<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
  - func[731] sig=9 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_since_epoch() const>
  - func[732] sig=1 <std::__2::enable_if<detail::no_overflow<std::__2::ratio<1ll, 1000000000ll>, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >::period>::value, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, long long, std::__2::ratio<1ll, 1000000000ll> >(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
@@ -1760,7 +1760,7 @@ Code[950]:
  - func[673] size=323 <Pinetime::Applications::Screens::BatteryIcon::GetBatteryIcon(float)>
  - func[674] size=113 <Pinetime::Applications::Screens::BatteryIcon::GetPlugIcon(bool)>
  - func[675] size=113 <Pinetime::Applications::Screens::BleIcon::GetIcon(bool)>
- - func[676] size=3166 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
+ - func[676] size=11492 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
  - func[677] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::DirtyValue(unsigned char)>
  - func[678] size=99 <Pinetime::Applications::Screens::DirtyValue<bool>::DirtyValue(bool)>
  - func[679] size=79 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_point()>
@@ -1771,49 +1771,49 @@ Code[950]:
  - func[684] size=218 <lv_color_hex(unsigned int)>
  - func[685] size=254 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[686] size=137 <event_handler(_lv_obj_t*, unsigned char)>
- - func[687] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
- - func[688] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
- - func[689] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[690] size=9705 <Pinetime::Applications::Screens::Clock::Refresh()>
- - func[691] size=51 <Pinetime::Controllers::Battery::PercentRemaining() const>
- - func[692] size=190 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
- - func[693] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
- - func[694] size=55 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
- - func[695] size=66 <Pinetime::Controllers::Battery::IsCharging() const>
- - func[696] size=66 <Pinetime::Controllers::Battery::IsPowerPresent() const>
- - func[697] size=66 <Pinetime::Controllers::Ble::IsConnected() const>
- - func[698] size=203 <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
- - func[699] size=66 <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
- - func[700] size=55 <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
- - func[701] size=103 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
- - func[702] size=153 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[703] size=66 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
- - func[704] size=55 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
- - func[705] size=177 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[706] size=167 <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[707] size=102 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
- - func[708] size=183 <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
- - func[709] size=88 <date::year_month_day::year() const>
- - func[710] size=75 <date::year::operator int() const>
- - func[711] size=103 <date::year_month_day::month() const>
- - func[712] size=67 <date::month::operator unsigned int() const>
- - func[713] size=103 <date::year_month_day::day() const>
- - func[714] size=67 <date::day::operator unsigned int() const>
- - func[715] size=125 <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
- - func[716] size=128 <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[717] size=126 <date::weekday::iso_encoding() const>
- - func[718] size=88 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
- - func[719] size=51 <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
- - func[720] size=103 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
- - func[721] size=51 <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
- - func[722] size=105 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
- - func[723] size=51 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
- - func[724] size=105 <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
- - func[725] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
- - func[726] size=216 <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
- - func[727] size=224 <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[728] size=224 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[729] size=253 <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[687] size=216 <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
+ - func[688] size=224 <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[689] size=224 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[690] size=253 <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[691] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
+ - func[692] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
+ - func[693] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
+ - func[694] size=6661 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[695] size=51 <Pinetime::Controllers::Battery::PercentRemaining() const>
+ - func[696] size=190 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
+ - func[697] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
+ - func[698] size=55 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
+ - func[699] size=66 <Pinetime::Controllers::Battery::IsCharging() const>
+ - func[700] size=66 <Pinetime::Controllers::Battery::IsPowerPresent() const>
+ - func[701] size=66 <Pinetime::Controllers::Ble::IsConnected() const>
+ - func[702] size=203 <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
+ - func[703] size=66 <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
+ - func[704] size=55 <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
+ - func[705] size=103 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
+ - func[706] size=153 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[707] size=66 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
+ - func[708] size=55 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
+ - func[709] size=177 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[710] size=167 <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[711] size=102 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
+ - func[712] size=183 <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
+ - func[713] size=88 <date::year_month_day::year() const>
+ - func[714] size=75 <date::year::operator int() const>
+ - func[715] size=103 <date::year_month_day::month() const>
+ - func[716] size=67 <date::month::operator unsigned int() const>
+ - func[717] size=103 <date::year_month_day::day() const>
+ - func[718] size=67 <date::day::operator unsigned int() const>
+ - func[719] size=125 <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
+ - func[720] size=128 <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[721] size=126 <date::weekday::iso_encoding() const>
+ - func[722] size=88 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
+ - func[723] size=51 <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
+ - func[724] size=103 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
+ - func[725] size=51 <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
+ - func[726] size=105 <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
+ - func[727] size=51 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
+ - func[728] size=105 <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
+ - func[729] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
  - func[730] size=122 <bool std::__2::chrono::operator!=<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
  - func[731] size=88 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_since_epoch() const>
  - func[732] size=348 <std::__2::enable_if<detail::no_overflow<std::__2::ratio<1ll, 1000000000ll>, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >::period>::value, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, long long, std::__2::ratio<1ll, 1000000000ll> >(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
@@ -3965,49 +3965,49 @@ Custom:
  - func[684] <lv_color_hex(unsigned int)>
  - func[685] <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[686] <event_handler(_lv_obj_t*, unsigned char)>
- - func[687] <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
- - func[688] <lv_color_make(unsigned char, unsigned char, unsigned char)>
- - func[689] <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[690] <Pinetime::Applications::Screens::Clock::Refresh()>
- - func[691] <Pinetime::Controllers::Battery::PercentRemaining() const>
- - func[692] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
- - func[693] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
- - func[694] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
- - func[695] <Pinetime::Controllers::Battery::IsCharging() const>
- - func[696] <Pinetime::Controllers::Battery::IsPowerPresent() const>
- - func[697] <Pinetime::Controllers::Ble::IsConnected() const>
- - func[698] <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
- - func[699] <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
- - func[700] <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
- - func[701] <Pinetime::Controllers::DateTime::CurrentDateTime() const>
- - func[702] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[703] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
- - func[704] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
- - func[705] <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
- - func[706] <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[707] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
- - func[708] <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
- - func[709] <date::year_month_day::year() const>
- - func[710] <date::year::operator int() const>
- - func[711] <date::year_month_day::month() const>
- - func[712] <date::month::operator unsigned int() const>
- - func[713] <date::year_month_day::day() const>
- - func[714] <date::day::operator unsigned int() const>
- - func[715] <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
- - func[716] <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
- - func[717] <date::weekday::iso_encoding() const>
- - func[718] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
- - func[719] <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
- - func[720] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
- - func[721] <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
- - func[722] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
- - func[723] <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
- - func[724] <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
- - func[725] <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
- - func[726] <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
- - func[727] <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[728] <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
- - func[729] <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[687] <lv_obj_set_style_local_bg_opa(_lv_obj_t*, unsigned char, unsigned char, unsigned char)>
+ - func[688] <lv_obj_set_style_local_border_width(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[689] <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
+ - func[690] <lv_obj_set_style_local_line_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[691] <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
+ - func[692] <lv_color_make(unsigned char, unsigned char, unsigned char)>
+ - func[693] <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
+ - func[694] <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[695] <Pinetime::Controllers::Battery::PercentRemaining() const>
+ - func[696] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
+ - func[697] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
+ - func[698] <Pinetime::Applications::Screens::DirtyValue<unsigned char>::Get()>
+ - func[699] <Pinetime::Controllers::Battery::IsCharging() const>
+ - func[700] <Pinetime::Controllers::Battery::IsPowerPresent() const>
+ - func[701] <Pinetime::Controllers::Ble::IsConnected() const>
+ - func[702] <Pinetime::Applications::Screens::DirtyValue<bool>::operator=(bool const&)>
+ - func[703] <Pinetime::Applications::Screens::DirtyValue<bool>::IsUpdated() const>
+ - func[704] <Pinetime::Applications::Screens::DirtyValue<bool>::Get()>
+ - func[705] <Pinetime::Controllers::DateTime::CurrentDateTime() const>
+ - func[706] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[707] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
+ - func[708] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::Get()>
+ - func[709] <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
+ - func[710] <std::__2::common_type<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type std::__2::chrono::operator-<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[711] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > date::make_time<long long, std::__2::ratio<1ll, 1000000000ll>, void>(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
+ - func[712] <date::year_month_day::year_month_day(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >)>
+ - func[713] <date::year_month_day::year() const>
+ - func[714] <date::year::operator int() const>
+ - func[715] <date::year_month_day::month() const>
+ - func[716] <date::month::operator unsigned int() const>
+ - func[717] <date::year_month_day::day() const>
+ - func[718] <date::day::operator unsigned int() const>
+ - func[719] <date::year_month_day::operator std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >() const>
+ - func[720] <date::weekday::weekday(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > > const&)>
+ - func[721] <date::weekday::iso_encoding() const>
+ - func[722] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::hours() const>
+ - func[723] <std::__2::chrono::duration<long, std::__2::ratio<3600ll, 1ll> >::count() const>
+ - func[724] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::minutes() const>
+ - func[725] <std::__2::chrono::duration<long, std::__2::ratio<60ll, 1ll> >::count() const>
+ - func[726] <date::hh_mm_ss<std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::seconds() const>
+ - func[727] <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1ll> >::count() const>
+ - func[728] <Pinetime::Applications::Screens::Clock::DayOfWeekToString(Pinetime::Controllers::DateTime::Days)>
+ - func[729] <Pinetime::Applications::Screens::DirtyValue<unsigned int>::IsUpdated() const>
  - func[730] <bool std::__2::chrono::operator!=<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&, std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
  - func[731] <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_since_epoch() const>
  - func[732] <std::__2::enable_if<detail::no_overflow<std::__2::ratio<1ll, 1000000000ll>, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >::period>::value, std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> > >::type date::floor<std::__2::chrono::duration<int, std::__2::ratio<86400ll, 1ll> >, long long, std::__2::ratio<1ll, 1000000000ll> >(std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > const&)>
