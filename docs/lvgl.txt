@@ -1778,7 +1778,7 @@ Code[950]:
  - func[691] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
  - func[692] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
  - func[693] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[694] size=6661 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[694] size=11590 <Pinetime::Applications::Screens::Clock::Refresh()>
  - func[695] size=51 <Pinetime::Controllers::Battery::PercentRemaining() const>
  - func[696] size=190 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
  - func[697] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
