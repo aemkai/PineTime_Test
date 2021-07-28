@@ -302,7 +302,7 @@ bool Clock::Refresh()
 	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-
+/*
 	minArc2 = lv_arc_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_opa(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
 	lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
@@ -338,7 +338,7 @@ bool Clock::Refresh()
 	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-
+*/
 
 
 	
@@ -356,7 +356,7 @@ bool Clock::Refresh()
 	lv_obj_align(hourArc4, minArc4, LV_ALIGN_OUT_BOTTOM_MID, 10, 0);	// 10px unter minArc4
 	// nicht in Sim
 	//lv_arc_set_value(hourArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
-	
+/*	
 	hourArc3 = lv_arc_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_opa(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
 	lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
@@ -405,7 +405,7 @@ bool Clock::Refresh()
 	// nicht in Sim
 	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
-
+*/
 	
 	
 	
