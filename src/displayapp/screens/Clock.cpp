@@ -336,6 +336,144 @@ bool Clock::Refresh()
 
 	char secondsStr[3];	  
 	  
+	  
+		/* Binary Watch */
+		/****************/
+		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
+		{
+			bool binMinArray[5] = {false};
+			bool binHourArray[4] = {false};
+			
+			uint8_t binMinTmp = static_cast<int>(minute);
+			uint8_t binHourTmp = static_cast<int>(hour);
+			
+			/* Minuten */
+			if (binMinTmp >= 32)
+			{
+				binMinTmp -= 32;
+				binMinArray[5] = true;
+				lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binMinTmp >= 16)
+			{
+				binMinTmp -= 16;
+				binMinArray[4] = true;
+				lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}	
+			
+			if (binMinTmp >= 8)
+			{
+				binMinTmp -= 8;
+				binMinArray[3] = true;
+				lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binMinTmp >= 4)
+			{
+				binMinTmp -= 4;
+				binMinArray[2] = true;
+				lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binMinTmp >= 2)
+			{
+				binMinTmp -= 2;
+				binMinArray[1] = true;
+				lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binMinTmp == 1)
+			{
+				binMinArray[0] = true;
+				lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}			
+			
+			/* Stunden */
+			if (binHourTmp >= 16)
+			{
+				binHourTmp -= 16;
+				binHourArray[4] = true;
+				lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}	
+			
+			if (binHourTmp >= 8)
+			{
+				binHourTmp -= 8;
+				binHourArray[3] = true;
+				lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binHourTmp >= 4)
+			{
+				binHourTmp -= 4;
+				binHourArray[2] = true;
+				lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binHourTmp >= 2)
+			{
+				binHourTmp -= 2;
+				binHourArray[1] = true;
+				lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}
+			
+			if (binHourTmp == 1)
+			{
+				binHourArray[0] = true;
+				lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
+			}
+			else
+			{
+				lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
+			}			
+			
+			
+		}	  
+	  
+	  
+	  
+	  
     	if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3]  || secondsChar[0] != displayedChar[4] || secondsChar[1] != displayedChar[5])
 	{
 		displayedChar[0] = hoursChar[0];
