@@ -253,7 +253,6 @@ bool Clock::Refresh()
 
 	
 	
-//#MK#
 /* Binary Watch */
 /****************/
 
@@ -288,7 +287,7 @@ bool Clock::Refresh()
 	lv_arc_set_end_angle(minArc4, 360);
 	lv_obj_set_size(minArc4, 20, 20);
 	//lv_arc_set_range(minArc4, 0, 100);
-	lv_obj_align(minArc4, minArc5, LV_ALIGN_OUT_MID_RIGHT, 0, 10);
+	lv_obj_align(minArc4, minArc5, LV_ALIGN_OUT_RIGHT_MID, 0, 10);
 	// nicht in Sim
 	//lv_arc_set_value(minArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
 	
@@ -406,7 +405,7 @@ bool Clock::Refresh()
 	// nicht in Sim
 	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
 
-	
+
 	
 	
 	
