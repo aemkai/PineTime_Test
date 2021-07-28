@@ -379,6 +379,8 @@ list(APPEND SOURCE_FILES
         displayapp/LittleVgl.cpp
         displayapp/fonts/jetbrains_mono_extrabold_compressed.c
         displayapp/fonts/jetbrains_mono_bold_20.c
+        displayapp/fonts/jetbrains_mono_76.c
+        displayapp/fonts/jetbrains_mono_42.c
 
         systemtask/SystemTask.cpp
         drivers/TwiMaster.cpp
