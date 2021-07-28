@@ -258,9 +258,10 @@ bool Clock::Refresh()
   singleArc = lv_arc_create(lv_scr_act(), nullptr);
 
   lv_obj_set_style_local_bg_opa(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
+  lv_obj_set_style_local_bg_color(singleArc, LV_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF00FF));
   lv_obj_set_style_local_border_width(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
   lv_obj_set_style_local_radius(singleArc, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-  lv_obj_set_style_local_line_color(singleArc, LV_ARC_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
+  lv_obj_set_style_local_line_color(singleArc, LV_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
   lv_arc_set_end_angle(singleArc, 360);
   lv_obj_set_size(singleArc, 20, 20);
   //lv_arc_set_range(singleArc, 0, 500);
@@ -272,7 +273,7 @@ bool Clock::Refresh()
   lv_obj_set_style_local_bg_opa(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
   lv_obj_set_style_local_border_width(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
   lv_obj_set_style_local_radius(singleArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-  lv_obj_set_style_local_line_color(singleArc2, LV_ARC_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
+  lv_obj_set_style_local_line_color(singleArc2, LV_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
   lv_arc_set_end_angle(singleArc2, 360);
   lv_obj_set_size(singleArc2, 15, 15);
   //lv_arc_set_range(singleArc, 0, 500);
