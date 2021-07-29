@@ -1693,7 +1693,7 @@ Code[917]:
  - func[642] size=323 <Pinetime::Applications::Screens::BatteryIcon::GetBatteryIcon(float)>
  - func[643] size=113 <Pinetime::Applications::Screens::BatteryIcon::GetPlugIcon(bool)>
  - func[644] size=113 <Pinetime::Applications::Screens::BleIcon::GetIcon(bool)>
- - func[645] size=5693 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
+ - func[645] size=3278 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
  - func[646] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::DirtyValue(unsigned char)>
  - func[647] size=99 <Pinetime::Applications::Screens::DirtyValue<bool>::DirtyValue(bool)>
  - func[648] size=79 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_point()>
@@ -1709,7 +1709,7 @@ Code[917]:
  - func[658] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
  - func[659] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
  - func[660] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[661] size=11496 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[661] size=8855 <Pinetime::Applications::Screens::Clock::Refresh()>
  - func[662] size=51 <Pinetime::Controllers::Battery::PercentRemaining() const>
  - func[663] size=190 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
  - func[664] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
