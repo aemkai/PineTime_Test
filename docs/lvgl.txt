@@ -697,9 +697,9 @@ Function[917]:
  - func[649] sig=22 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::DirtyValue(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >)>
  - func[650] sig=0 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::DirtyValue(unsigned int)>
  - func[651] sig=8 <lv_scr_act()>
- - func[652] sig=6 <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
- - func[653] sig=4 <lv_color_hex(unsigned int)>
- - func[654] sig=6 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[652] sig=4 <lv_color_hex(unsigned int)>
+ - func[653] sig=6 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[654] sig=6 <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
  - func[655] sig=4 <event_handler(_lv_obj_t*, unsigned char)>
  - func[656] sig=6 <lv_obj_set_style_local_bg_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[657] sig=6 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
@@ -1693,23 +1693,23 @@ Code[917]:
  - func[642] size=323 <Pinetime::Applications::Screens::BatteryIcon::GetBatteryIcon(float)>
  - func[643] size=113 <Pinetime::Applications::Screens::BatteryIcon::GetPlugIcon(bool)>
  - func[644] size=113 <Pinetime::Applications::Screens::BleIcon::GetIcon(bool)>
- - func[645] size=5101 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
+ - func[645] size=5309 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
  - func[646] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::DirtyValue(unsigned char)>
  - func[647] size=99 <Pinetime::Applications::Screens::DirtyValue<bool>::DirtyValue(bool)>
  - func[648] size=79 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_point()>
  - func[649] size=128 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::DirtyValue(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >)>
  - func[650] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned int>::DirtyValue(unsigned int)>
  - func[651] size=20 <lv_scr_act()>
- - func[652] size=202 <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
- - func[653] size=218 <lv_color_hex(unsigned int)>
- - func[654] size=254 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[652] size=218 <lv_color_hex(unsigned int)>
+ - func[653] size=254 <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[654] size=202 <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
  - func[655] size=137 <event_handler(_lv_obj_t*, unsigned char)>
  - func[656] size=252 <lv_obj_set_style_local_bg_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[657] size=224 <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
  - func[658] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
  - func[659] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
  - func[660] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[661] size=6661 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[661] size=6380 <Pinetime::Applications::Screens::Clock::Refresh()>
  - func[662] size=51 <Pinetime::Controllers::Battery::PercentRemaining() const>
  - func[663] size=190 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::operator=(unsigned char const&)>
  - func[664] size=66 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::IsUpdated() const>
@@ -3848,9 +3848,9 @@ Custom:
  - func[649] <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::DirtyValue(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >)>
  - func[650] <Pinetime::Applications::Screens::DirtyValue<unsigned int>::DirtyValue(unsigned int)>
  - func[651] <lv_scr_act()>
- - func[652] <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
- - func[653] <lv_color_hex(unsigned int)>
- - func[654] <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[652] <lv_color_hex(unsigned int)>
+ - func[653] <lv_obj_set_style_local_text_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
+ - func[654] <lv_obj_set_style_local_text_font(_lv_obj_t*, unsigned char, unsigned char, _lv_font_struct const*)>
  - func[655] <event_handler(_lv_obj_t*, unsigned char)>
  - func[656] <lv_obj_set_style_local_bg_color(_lv_obj_t*, unsigned char, unsigned char, lv_color16_t)>
  - func[657] <lv_obj_set_style_local_radius(_lv_obj_t*, unsigned char, unsigned char, short)>
