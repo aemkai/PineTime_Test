@@ -179,13 +179,13 @@ lv_obj_align(minLED2, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 10, 5);		// absolut se
 	
 	// for hours //
 	///////////////
-/*	
+	
 	hourLED4 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
 	lv_obj_set_style_local_radius(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(hourLED4, LED_SIZE, LED_SIZE);
 	lv_obj_align(hourLED4, minLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SIZE/4));	// 1/4 Kreis unter minLED4
-
+/*
 	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
 	lv_obj_set_style_local_radius(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
