@@ -143,7 +143,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
 	lv_obj_set_style_local_radius(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(minLED5, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, 5);		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
+	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 10, 5);		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
 	//lv_obj_align(minLED5, label_time, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 10); 	// relativ zu Uhrzeit setzen an linker unterer Kante, dann 10 px drunter
 	
 	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
@@ -151,7 +151,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_radius(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(minLED4, LED_SIZE, LED_SIZE);
 	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);
-/*
+
 	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
 	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
@@ -175,7 +175,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_radius(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(minLED0, LED_SIZE, LED_SIZE);
 	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
-*/	
+	
 	// for hours //
 	///////////////
 	
@@ -184,7 +184,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_radius(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(hourLED4, LED_SIZE, LED_SIZE);
 	lv_obj_align(hourLED4, minLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SIZE/4));	// 1/4 Kreis unter minLED4
-/*
+
 	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
 	lv_obj_set_style_local_radius(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
@@ -208,7 +208,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_radius(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(hourLED0, LED_SIZE, LED_SIZE);
 	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
-*/
+
 }
 
 Clock::~Clock() {
@@ -282,9 +282,142 @@ bool Clock::Refresh()
 	char secondsStr[3];	  
 	  
 	  
-	/* Binary Watch */
-	/****************/
-
+	// Binary Watch //
+	//////////////////
+	
+		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
+		{
+			//bool binMinArray[5] = {false};
+			//bool binHourArray[4] = {false};
+			
+			uint8_t binMinTmp = static_cast<int>(minute);
+			uint8_t binHourTmp = static_cast<int>(hour);
+			
+			// Minuten //
+			if (binMinTmp >= 32)
+			{
+				binMinTmp -= 32;
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				//binMinArray[5] = true;
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}
+			
+			if (binMinTmp >= 16)
+			{
+				binMinTmp -= 16;
+				//binMinArray[4] = true;
+				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}	
+			
+			if (binMinTmp >= 8)
+			{
+				binMinTmp -= 8;
+				//binMinArray[3] = true;
+				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}
+			
+			if (binMinTmp >= 4)
+			{
+				binMinTmp -= 4;
+				//binMinArray[2] = true;
+				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}
+			
+			if (binMinTmp >= 2)
+			{
+				binMinTmp -= 2;
+				//binMinArray[1] = true;
+				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}
+			
+			if (binMinTmp == 1)
+			{
+				//binMinArray[0] = true;
+				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+			}			
+			
+			// Stunden //
+			if (binHourTmp >= 16)
+			{
+				binHourTmp -= 16;
+				//binHourArray[4] = true;
+				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+			}	
+			
+			if (binHourTmp >= 8)
+			{
+				binHourTmp -= 8;
+				//binHourArray[3] = true;
+				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+			}
+			
+			if (binHourTmp >= 4)
+			{
+				binHourTmp -= 4;
+				//binHourArray[2] = true;
+				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+			}
+			
+			if (binHourTmp >= 2)
+			{
+				binHourTmp -= 2;
+				//binHourArray[1] = true;
+				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+			}
+			
+			if (binHourTmp == 1)
+			{
+				//binHourArray[0] = true;
+				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+			}			
+			
+			
+		}
+ 
+		// Ende Binary Watch //
 	  
 	  
 	  
