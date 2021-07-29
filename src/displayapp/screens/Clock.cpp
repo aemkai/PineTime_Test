@@ -68,14 +68,16 @@ Clock::Clock(DisplayApp* app,
 	label_date = lv_label_create(lv_scr_act(), nullptr);
 
 	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 60);
-
 	label_time = lv_label_create(lv_scr_act(), nullptr);
-	lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, -30);
+	//lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -70);
+		// -> auch bei Anzeige nochmal gesetzt!
+	
 	//lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 	lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_76);
 
 	label_sec = lv_label_create(lv_scr_act(), nullptr);
-	lv_obj_align(label_sec, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, 0, -30);
+	//lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
+		// -> auch bei Anzeige nochmal gesetzt
 	//lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 	lv_obj_set_style_local_text_font(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_42);
 	lv_obj_set_style_local_text_color(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCCCC00));
