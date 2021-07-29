@@ -52,12 +52,19 @@ Clock::Clock(DisplayApp* app,
 	batteryIcon = lv_label_create(lv_scr_act(), nullptr);
 	lv_label_set_text(batteryIcon, Symbols::batteryFull);
 	lv_obj_align(batteryIcon, lv_scr_act(), LV_ALIGN_IN_TOP_RIGHT, -5, 2);
+	
+	label_volt = lv_label_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_text_color(label_volt, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00CDCD));
+	lv_label_set_text(label_volt, "3.45V");	
+	lv_obj_align(label_volt, batteryIcon, LV_ALIGN_OUT_LEFT_MID, -5, 0);
 
 	batteryPlug = lv_label_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_text_color(batteryPlug, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 	lv_label_set_text(batteryPlug, Symbols::plug);
-	lv_obj_align(batteryPlug, batteryIcon, LV_ALIGN_OUT_LEFT_MID, -5, 0);
+	lv_obj_align(batteryPlug, label_volt, LV_ALIGN_OUT_LEFT_MID, -5, 0);
 
 	bleIcon = lv_label_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_text_color(bleIcon, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
 	lv_label_set_text(bleIcon, Symbols::bluetooth);
 	lv_obj_align(bleIcon, batteryPlug, LV_ALIGN_OUT_LEFT_MID, -5, 0);
 
