@@ -66,25 +66,29 @@ Clock::Clock(DisplayApp* app,
 	//lv_obj_align(notificationIcon, nullptr, LV_ALIGN_IN_TOP_LEFT, 10, 0);
 
 	label_date = lv_label_create(lv_scr_act(), nullptr);
-
-	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 60);
+	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 65);
+	lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));
+						   
+						   					   
 	label_time = lv_label_create(lv_scr_act(), nullptr);
-	//lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -70);
-		// -> auch bei Anzeige nochmal gesetzt!
+	lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -45);
+		// -> auch bei Anzeige nochmal gesetzt wg. 12 h -> Werte angleichen!
+		// -> hier schon setzen, da Binär-Uhr daran ausgerichtet wird
 	
 	//lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 	lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_76);
 
 	label_sec = lv_label_create(lv_scr_act(), nullptr);
-	//lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
-		// -> auch bei Anzeige nochmal gesetzt
+	lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
+		// -> auch bei Anzeige nochmal gesetzt wg. 12 h -> Werte angleichen!
+		// -> hier schon setzen, da Binär-Uhr daran ausgerichtet wird
 	//lv_obj_set_style_local_text_font(label_time, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_extrabold_compressed);
 	lv_obj_set_style_local_text_font(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_42);
 	lv_obj_set_style_local_text_color(label_sec, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCCCC00));
 
-
-	lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 0, 0);
-	lv_obj_align(label_sec, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, 0, 0);
+	label_time_ampm = lv_label_create(lv_scr_act(), nullptr);
+	lv_label_set_text_static(label_time_ampm, "");
+	lv_obj_align(label_time_ampm, lv_scr_act(), LV_ALIGN_IN_RIGHT_MID, -30, -55);
 
 	backgroundLabel = lv_label_create(lv_scr_act(), nullptr);
 	backgroundLabel->user_data = this;
@@ -303,8 +307,8 @@ bool Clock::Refresh()
 	sprintf(secondsStr, "%c%c", secondsChar[0], secondsChar[1]);	  
 	lv_label_set_text(label_sec, secondsStr);
 
-	lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -60);
-	lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
+	//lv_obj_align(label_time, lv_scr_act(), LV_ALIGN_CENTER, 0, -45);
+	//lv_obj_align(label_sec, label_time, LV_ALIGN_OUT_BOTTOM_MID, 85, 10);
 		  
 	 	  
 
