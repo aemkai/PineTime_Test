@@ -284,7 +284,6 @@ bool Clock::Refresh()
 	  
 	// Binary Watch //
 	//////////////////
-	
 		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
 		{
 			//bool binMinArray[5] = {false};
@@ -297,66 +296,66 @@ bool Clock::Refresh()
 			if (binMinTmp >= 32)
 			{
 				binMinTmp -= 32;
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 				//binMinArray[5] = true;
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}
 			
 			if (binMinTmp >= 16)
 			{
 				binMinTmp -= 16;
 				//binMinArray[4] = true;
-				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}	
 			
 			if (binMinTmp >= 8)
 			{
 				binMinTmp -= 8;
 				//binMinArray[3] = true;
-				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}
 			
 			if (binMinTmp >= 4)
 			{
 				binMinTmp -= 4;
 				//binMinArray[2] = true;
-				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 			}		
 			else			
 			{
-				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}
 			
 			if (binMinTmp >= 2)
 			{
 				binMinTmp -= 2;
 				//binMinArray[1] = true;
-				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}
 			
 			if (binMinTmp == 1)
 			{
 				//binMinArray[0] = true;
-				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000);
+				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xFF0000));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000);
+				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x550000));
 			}			
 			
 			// Stunden //
@@ -364,59 +363,58 @@ bool Clock::Refresh()
 			{
 				binHourTmp -= 16;
 				//binHourArray[4] = true;
-				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500));
 			}	
 			
 			if (binHourTmp >= 8)
 			{
 				binHourTmp -= 8;
 				//binHourArray[3] = true;
-				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500));
 			}
 			
 			if (binHourTmp >= 4)
 			{
 				binHourTmp -= 4;
 				//binHourArray[2] = true;
-				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00));
 			}		
 			else			
 			{
-				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500));
 			}
 			
 			if (binHourTmp >= 2)
 			{
 				binHourTmp -= 2;
 				//binHourArray[1] = true;
-				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500));
 			}
 			
 			if (binHourTmp == 1)
 			{
 				//binHourArray[0] = true;
-				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00);
+				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00FF00));
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500);
+				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x005500));
 			}			
 			
 			
 		}
- 
 		// Ende Binary Watch //
 	  
 	  
