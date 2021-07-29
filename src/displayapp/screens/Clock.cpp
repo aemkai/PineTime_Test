@@ -125,145 +125,74 @@ Clock::Clock(DisplayApp* app,
 	/* for minutes */
 	/////////////////
 	
-	minArc5 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc5,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc5, 360);
-	lv_obj_set_size(minArc5, 20, 20);
-	//lv_arc_set_range(minArc5, 0, 100);
-	lv_obj_align(minArc5, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
-	// nicht in Sim
-	//lv_arc_set_value(minArc5, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
+	minLED5 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED5, ballSize, ballSize);
+	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 5, 5);
 	
-	minArc4 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc4, 360);
-	lv_obj_set_size(minArc4, 20, 20);
-	//lv_arc_set_range(minArc4, 10, 00);
-	lv_obj_align(minArc4, minArc5, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
-	
-	minArc3 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc3, 360);
-	lv_obj_set_size(minArc3, 20, 20);
-	//lv_arc_set_range(minArc3, 10, 00);
-	lv_obj_align(minArc3, minArc4, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED4, ballSize, ballSize);
+	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);
 
-	minArc2 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc2, 360);
-	lv_obj_set_size(minArc2, 20, 20);
-	//lv_arc_set_range(minArc2, 10, 00);
-	lv_obj_align(minArc2, minArc3, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED3, ballSize, ballSize);
+	lv_obj_align(minLED3, minLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 	
-	minArc1 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc1, 360);
-	lv_obj_set_size(minArc1, 20, 20);
-	//lv_arc_set_range(minArc1, 10, 00);
-	lv_obj_align(minArc1, minArc2, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	minLED2 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED2, ballSize, ballSize);
+	lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 	
-	minArc0 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(minArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(minArc0, 360);
-	lv_obj_set_size(minArc0, 20, 20);
-	//lv_arc_set_range(minArc0, 10, 00);
-	lv_obj_align(minArc0, minArc1, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(minArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	minLED1 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED1, ballSize, ballSize);
+	lv_obj_align(minLED1, minLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	
+	minLED0 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
+	lv_obj_set_style_local_radius(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(minLED0, ballSize, ballSize);
+	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	
+	// for hours //
+	///////////////
+	
+	hourLED4 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
+	lv_obj_set_style_local_radius(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(hourLED4, ballSize, ballSize);
+	lv_obj_align(hourLED4, hourLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SIZE/4));	// 1/4 Kreis unter hourLED4
 
-
-
+	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
+	lv_obj_set_style_local_radius(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(hourLED3, ballSize, ballSize);
+	lv_obj_align(hourLED3, hourLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 	
-	/* for hours */
-	/////////////////
-
-	hourArc4 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc4,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc4, 360);
-	lv_obj_set_size(hourArc4, 20, 20);
-	//lv_arc_set_range(hourArc4, 0, 100);
-	lv_obj_align(hourArc4, minArc4, LV_ALIGN_OUT_BOTTOM_MID, 0, 5);	// 10px unter minArc4
-	// nicht in Sim
-	//lv_arc_set_value(hourArc4, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)	
+	hourLED2 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
+	lv_obj_set_style_local_radius(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(hourLED2, ballSize, ballSize);
+	lv_obj_align(hourLED2, hourLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 	
-	hourArc3 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc3,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc3, 360);
-	lv_obj_set_size(hourArc3, 20, 20);
-	//lv_arc_set_range(hourArc3, 10, 00);
-	lv_obj_align(hourArc3, hourArc4, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc3, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-
-	hourArc2 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc2,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc2, 360);
-	lv_obj_set_size(hourArc2, 20, 20);
-	//lv_arc_set_range(hourArc2, 10, 00);
-	lv_obj_align(hourArc2, hourArc3, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc2, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
+	hourLED1 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
+	lv_obj_set_style_local_radius(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(hourLED1, ballSize, ballSize);
+	lv_obj_align(hourLED1, hourLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 	
-	hourArc1 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc1,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc1, 360);
-	lv_obj_set_size(hourArc1, 20, 20);
-	//lv_arc_set_range(hourArc1, 10, 00);
-	lv_obj_align(hourArc1, hourArc2, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc1, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)
-	
-	hourArc0 = lv_arc_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_opa(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, LV_OPA_0);
-	lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-	lv_obj_set_style_local_radius(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-	lv_obj_set_style_local_line_color(hourArc0,LV_ARC_PART_INDIC, LV_STATE_DEFAULT, lv_color_hex(0x0000FF));
-	lv_arc_set_end_angle(hourArc0, 360);
-	lv_obj_set_size(hourArc0, 20, 20);
-	//lv_arc_set_range(hourArc0, 10, 00);
-	lv_obj_align(hourArc0, hourArc1, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
-	// nicht in Sim
-	//lv_arc_set_value(hourArc0, int16_t(100)); //1=gefüllt = Farbe, 0 = ungefüllt = grau)						   
-						   
-						   
+	hourLED0 = lv_obj_create(lv_scr_act(), nullptr);
+	lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_GREEN);
+	lv_obj_set_style_local_radius(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
+	lv_obj_set_size(hourLED0, ballSize, ballSize);
+	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
 }
 
 Clock::~Clock() {
@@ -337,140 +266,9 @@ bool Clock::Refresh()
 	char secondsStr[3];	  
 	  
 	  
-		/* Binary Watch */
-		/****************/
-		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
-		{
-			bool binMinArray[5] = {false};
-			bool binHourArray[4] = {false};
-			
-			uint8_t binMinTmp = static_cast<int>(minute);
-			uint8_t binHourTmp = static_cast<int>(hour);
-			
-			/* Minuten */
-			if (binMinTmp >= 32)
-			{
-				binMinTmp -= 32;
-				binMinArray[5] = true;
-				lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(minArc5, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binMinTmp >= 16)
-			{
-				binMinTmp -= 16;
-				binMinArray[4] = true;
-				lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(minArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}	
-			
-			if (binMinTmp >= 8)
-			{
-				binMinTmp -= 8;
-				binMinArray[3] = true;
-				lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(minArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binMinTmp >= 4)
-			{
-				binMinTmp -= 4;
-				binMinArray[2] = true;
-				lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_border_width(minArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binMinTmp >= 2)
-			{
-				binMinTmp -= 2;
-				binMinArray[1] = true;
-				lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(minArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binMinTmp == 1)
-			{
-				binMinArray[0] = true;
-				lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(minArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}			
-			
-			/* Stunden */
-			if (binHourTmp >= 16)
-			{
-				binHourTmp -= 16;
-				binHourArray[4] = true;
-				lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(hourArc4, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}	
-			
-			if (binHourTmp >= 8)
-			{
-				binHourTmp -= 8;
-				binHourArray[3] = true;
-				lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(hourArc3, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binHourTmp >= 4)
-			{
-				binHourTmp -= 4;
-				binHourArray[2] = true;
-				lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_border_width(hourArc2, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binHourTmp >= 2)
-			{
-				binHourTmp -= 2;
-				binHourArray[1] = true;
-				lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(hourArc1, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}
-			
-			if (binHourTmp == 1)
-			{
-				binHourArray[0] = true;
-				lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 10);
-			}
-			else
-			{
-				lv_obj_set_style_local_border_width(hourArc0, LV_ARC_PART_BG, LV_STATE_DEFAULT, 1);
-			}			
-			
-			
-		}	  
-	  
+	/* Binary Watch */
+	/****************/
+
 	  
 	  
 	  
