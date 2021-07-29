@@ -163,7 +163,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_radius(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(minLED2, LED_SIZE, LED_SIZE);
 //lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
-lv_obj_align(minLED2, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 10, 5);		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)						   
+lv_obj_align(minLED2, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, (5+(1.25*LED_SIZE));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)						   
 	
 	minLED1 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
@@ -185,7 +185,7 @@ lv_obj_align(minLED2, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 10, 5);		// absolut se
 	lv_obj_set_style_local_radius(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(hourLED4, LED_SIZE, LED_SIZE);
 //lv_obj_align(hourLED4, minLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SIZE/4));	// 1/4 Kreis unter minLED4
-lv_obj_align(hourLED4, minLED1, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SIZE/4));	// 1/4 Kreis unter minLED4
+lv_obj_align(hourLED4, minLED1, LV_ALIGN_OUT_BOTTOM_MID, 0, (-1.25*LED_SIZE));	// 1/4 Kreis unter minLED4
 						   
 /*
 	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
