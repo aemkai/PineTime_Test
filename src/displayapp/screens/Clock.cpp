@@ -131,7 +131,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
 	lv_obj_set_style_local_radius(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_size(minLED5, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_LEFT, 5, 5);
+	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, 5);
 	
 	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_RED);
