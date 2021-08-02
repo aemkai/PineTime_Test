@@ -87,7 +87,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED5,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));	
 	lv_obj_set_size(minLED5, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, LED_SPACE_H/2, (5+(LED_SIZE/2+LED_SPACE_V)));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
+	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, LED_SPACE_H/2, 0);		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
 	//lv_obj_align(minLED5, label_time, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 10); 	// relativ zu Uhrzeit setzen an linker unterer Kante, dann 10 px drunter
 	
 	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
