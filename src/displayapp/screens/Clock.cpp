@@ -234,7 +234,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(monLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
 	lv_obj_set_size(monLED3, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(monLED3, dayLED3, LV_ALIGN_OUT_RIGHT_MID, 0, ((LED_SIZE2+LED_SPACE_V2)));	// 1/4 Kreis unter dayLED4	
+	lv_obj_align(monLED3, dayLED3, LV_ALIGN_OUT_RIGHT_MID, 0, (LED_SPACE_V2)));	// 1/4 Kreis unter dayLED3	
 	
 	monLED2 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
