@@ -94,7 +94,7 @@ Clock::Clock(DisplayApp* app,
 	//lv_obj_align(minLED5, label_time, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 10); 	// relativ zu Uhrzeit setzen an linker unterer Kante, dann 10 px drunter
 	
 	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF));
+	lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
 	lv_obj_set_style_local_line_color(minLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
@@ -102,7 +102,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);
 
 	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF));
+	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
 	lv_obj_set_style_local_line_color(minLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
@@ -110,7 +110,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(minLED3, minLED4, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
 	
 	minLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF));
+	lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
 	lv_obj_set_style_local_line_color(minLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);
@@ -118,7 +118,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
 	
 	minLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF));
+	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
 	lv_obj_set_style_local_line_color(minLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
@@ -126,7 +126,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(minLED1, minLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
 	
 	minLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF));
+	lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
 	lv_obj_set_style_local_line_color(minLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
@@ -177,12 +177,11 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);	
 
 
-
 	// for days //
 	/////////////////
 	
 	dayLED4 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+	lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 	lv_obj_set_style_local_radius(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
@@ -190,7 +189,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(dayLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, LED_SPACE_H2/2, ((2*LED_SIZE1)+(LED_SIZE2/2+LED_SPACE_V2)));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0,
 
 	dayLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+	lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 	lv_obj_set_style_local_radius(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
@@ -198,7 +197,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(dayLED3, dayLED4, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
 	
 	dayLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+	lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 	lv_obj_set_style_local_radius(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);
@@ -206,7 +205,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(dayLED2, dayLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
 	
 	dayLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+	lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 	lv_obj_set_style_local_radius(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
@@ -214,7 +213,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(dayLED1, dayLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
 	
 	dayLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+	lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 	lv_obj_set_style_local_radius(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
@@ -257,7 +256,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_line_color(monLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
 	lv_obj_set_size(monLED0, LED_SIZE2, LED_SIZE2);
 	lv_obj_align(monLED0, monLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);	
-						   
+			   
 						   
 }
 
