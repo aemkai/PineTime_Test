@@ -83,7 +83,7 @@ Clock::Clock(DisplayApp* app,
 	
 	// for minutes //
 	/////////////////
-	
+/*	
 	minLED5 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
@@ -101,7 +101,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_size(minLED4, LED_SIZE1, LED_SIZE1);
 	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);
 
-/*	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
+	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
@@ -132,7 +132,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_line_color(minLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
 	lv_obj_set_size(minLED0, LED_SIZE1, LED_SIZE1);
 	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-*/	
+	
 	// for hours //
 	///////////////
 	
@@ -144,7 +144,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_size(hourLED4, LED_SIZE1, LED_SIZE1);
 	lv_obj_align(hourLED4, minLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (-(2*LED_SIZE1+LED_SPACE_V1)));	// 1/4 Kreis über minLED4
 
-/*	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
+	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
 	lv_obj_set_style_local_radius(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
@@ -298,7 +298,7 @@ bool Clock::Refresh()
 
 		// Binary Watch //
 		//////////////////
-	
+/*	
 		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
 		{
 			//bool binMinArray[5] = {false};
@@ -431,7 +431,7 @@ bool Clock::Refresh()
 			
 		}
 		// Ende Binary Watch //
-	
+*/	
 	
 	
 	
