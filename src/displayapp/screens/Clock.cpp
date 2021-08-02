@@ -52,7 +52,7 @@ Clock::Clock(DisplayApp* app,
 
 	
 	label_date = lv_label_create(lv_scr_act(), nullptr);
-	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 75);
+	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 85);
 	lv_obj_set_style_local_text_color(label_date, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));	
 
 	backgroundLabel = lv_label_create(lv_scr_act(), nullptr);
@@ -447,7 +447,7 @@ bool Clock::Refresh()
 		sprintf(dateStr, "%d", year);		
 
 		lv_label_set_text(label_date, dateStr);
-		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 75);
+		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 85);
 
 
 			// Binary Date //
