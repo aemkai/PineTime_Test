@@ -186,7 +186,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
 	lv_obj_set_style_local_line_color(dayLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
 	lv_obj_set_size(dayLED4, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED4, lv_scr_act(), LV_ALIGN_CENTER, ((LED_SIZE1)+(LED_SIZE2/2+LED_SPACE_V2)), -(2,5*LED_SIZE_H2+LED_SPACE2/2));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher ->
+	lv_obj_align(dayLED4, lv_scr_act(), LV_ALIGN_CENTER, ((LED_SIZE1)+(LED_SIZE2/2+LED_SPACE_V2)), -(2,5*LED_SIZE2+LED_SPACE_H2/2));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher ->
 
 	dayLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
