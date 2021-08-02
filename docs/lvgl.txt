@@ -1687,7 +1687,7 @@ Code[901]:
  - func[654] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
  - func[655] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
  - func[656] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
- - func[657] size=5613 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[657] size=5614 <Pinetime::Applications::Screens::Clock::Refresh()>
  - func[658] size=103 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
  - func[659] size=153 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
  - func[660] size=66 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
