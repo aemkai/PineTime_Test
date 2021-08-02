@@ -1669,7 +1669,7 @@ Code[900]:
  - func[637] size=214 <lv_port_disp_init>
  - func[638] size=3 <disp_init>
  - func[639] size=989 <disp_flush>
- - func[640] size=7315 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
+ - func[640] size=5117 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
  - func[641] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::DirtyValue(unsigned char)>
  - func[642] size=99 <Pinetime::Applications::Screens::DirtyValue<bool>::DirtyValue(bool)>
  - func[643] size=79 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_point()>
@@ -1685,7 +1685,7 @@ Code[900]:
  - func[653] size=115 <std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> >::zero()>
  - func[654] size=205 <Pinetime::Applications::Screens::Clock::OnObjectEvent(_lv_obj_t*, unsigned char)>
  - func[655] size=335 <lv_color_make(unsigned char, unsigned char, unsigned char)>
- - func[656] size=6177 <Pinetime::Applications::Screens::Clock::Refresh()>
+ - func[656] size=1332 <Pinetime::Applications::Screens::Clock::Refresh()>
  - func[657] size=103 <Pinetime::Controllers::DateTime::CurrentDateTime() const>
  - func[658] size=153 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::operator=(std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > const&)>
  - func[659] size=66 <Pinetime::Applications::Screens::DirtyValue<std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > > >::IsUpdated() const>
