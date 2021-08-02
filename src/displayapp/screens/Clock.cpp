@@ -40,7 +40,8 @@ Clock::Clock(DisplayApp* app,
         Controllers::Battery& batteryController,
         Controllers::Ble& bleController) : Screen(app), currentDateTime{{}},
                                            dateTimeController{dateTimeController}, batteryController{batteryController},
-                                           bleController{bleController} {
+                                           bleController{bleController} 
+{
 	displayedChar[0] = 0;
 	displayedChar[1] = 0;
 	displayedChar[2] = 0;
@@ -260,137 +261,6 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_align(monLED0, monLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);	
 		   
 
-    if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
-    {
-		char dateStr[22];
-
-		// Monat als String
-		//sprintf(dateStr, "%s %d %s %d", dateTimeController.DayOfWeekShortToString(), day, dateTimeController.MonthShortToString(), year);
-		// Monat als Zahl
-		//sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekShortToString(), day, month, year);		
-		sprintf(dateStr, "%d", year);		
-
-		lv_label_set_text(label_date, dateStr);
-		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
-
-
-		// Binary Date //
-
-			uint8_t binDayTmp = static_cast<int>(day);
-			uint8_t binMonTmp = static_cast<int>(month);
-			
-			// Days //	
-			if (binDayTmp >= 16)
-			{
-				binDayTmp -= 16;
-				//binMinArray[4] = true;
-				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
-			}	
-			
-			if (binDayTmp >= 8)
-			{
-				binDayTmp -= 8;
-				//binMinArray[3] = true;
-				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
-			}
-			
-			if (binDayTmp >= 4)
-			{
-				binDayTmp -= 4;
-				//binMinArray[2] = true;
-				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
-			}
-			
-			if (binDayTmp >= 2)
-			{
-				binDayTmp -= 2;
-				//binMinArray[1] = true;
-				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
-			}
-			
-			if (binDayTmp == 1)
-			{
-				//binMinArray[0] = true;
-				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
-			}			
-			
-			// Months //
-			if (binMonTmp >= 8)
-			{
-				binMonTmp -= 8;
-				//binHourArray[3] = true;
-				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp >= 4)
-			{
-				binMonTmp -= 4;
-				//binHourArray[2] = true;
-				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp >= 2)
-			{
-				binMonTmp -= 2;
-				//binHourArray[1] = true;
-				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp == 1)
-			{
-				//binHourArray[0] = true;
-				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}			
-			
-			// Ende Binary Date //
-			
-		}
-
-
-
-		currentYear = year;
-		currentMonth = month;
-		currentDayOfWeek = dayOfWeek;
-		currentDay = day;
-    }
-						   
-						   
 }
 
 Clock::~Clock() {
@@ -565,10 +435,138 @@ bool Clock::Refresh()
 		}
 		// Ende Binary Watch //
 */	
+
+    if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
+    {
+		char dateStr[22];
+
+		// Monat als String
+		//sprintf(dateStr, "%s %d %s %d", dateTimeController.DayOfWeekShortToString(), day, dateTimeController.MonthShortToString(), year);
+		// Monat als Zahl
+		//sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekShortToString(), day, month, year);		
+		sprintf(dateStr, "%d", year);		
+
+		lv_label_set_text(label_date, dateStr);
+		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
+
+
+		// Binary Date //
+
+			uint8_t binDayTmp = static_cast<int>(day);
+			uint8_t binMonTmp = static_cast<int>(month);
+			
+			// Days //	
+			if (binDayTmp >= 16)
+			{
+				binDayTmp -= 16;
+				//binMinArray[4] = true;
+				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+			}	
+			
+			if (binDayTmp >= 8)
+			{
+				binDayTmp -= 8;
+				//binMinArray[3] = true;
+				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+			}
+			
+			if (binDayTmp >= 4)
+			{
+				binDayTmp -= 4;
+				//binMinArray[2] = true;
+				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+			}
+			
+			if (binDayTmp >= 2)
+			{
+				binDayTmp -= 2;
+				//binMinArray[1] = true;
+				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+			}
+			
+			if (binDayTmp == 1)
+			{
+				//binMinArray[0] = true;
+				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+			}			
+			
+			// Months //
+			if (binMonTmp >= 8)
+			{
+				binMonTmp -= 8;
+				//binHourArray[3] = true;
+				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
+			}
+			
+			if (binMonTmp >= 4)
+			{
+				binMonTmp -= 4;
+				//binHourArray[2] = true;
+				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
+			}		
+			else			
+			{
+				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
+			}
+			
+			if (binMonTmp >= 2)
+			{
+				binMonTmp -= 2;
+				//binHourArray[1] = true;
+				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
+			}
+			
+			if (binMonTmp == 1)
+			{
+				//binHourArray[0] = true;
+				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
+			}
+			else
+			{
+				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
+			}			
+			
+			// Ende Binary Date //
+			
+		}
+
+
+
+		currentYear = year;
+		currentMonth = month;
+		currentDayOfWeek = dayOfWeek;
+		currentDay = day;
+    }	
 	
 	
-	
-  }
 
 	
   return running;
