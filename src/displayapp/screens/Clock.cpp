@@ -101,7 +101,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_size(minLED4, LED_SIZE1, LED_SIZE1);
 	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);
 
-	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
+/*	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
 	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
 	lv_obj_set_style_local_border_width(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
@@ -132,7 +132,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_line_color(minLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
 	lv_obj_set_size(minLED0, LED_SIZE1, LED_SIZE1);
 	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
+*/	
 	// for hours //
 	///////////////
 	
