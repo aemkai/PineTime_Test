@@ -1669,7 +1669,7 @@ Code[900]:
  - func[637] size=214 <lv_port_disp_init>
  - func[638] size=3 <disp_init>
  - func[639] size=989 <disp_flush>
- - func[640] size=10216 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
+ - func[640] size=7315 <Pinetime::Applications::Screens::Clock::Clock(DisplayApp*, Pinetime::Controllers::DateTime&, Pinetime::Controllers::Battery&, Pinetime::Controllers::Ble&)>
  - func[641] size=78 <Pinetime::Applications::Screens::DirtyValue<unsigned char>::DirtyValue(unsigned char)>
  - func[642] size=99 <Pinetime::Applications::Screens::DirtyValue<bool>::DirtyValue(bool)>
  - func[643] size=79 <std::__2::chrono::time_point<std::__2::chrono::system_clock, std::__2::chrono::duration<long long, std::__2::ratio<1ll, 1000000000ll> > >::time_point()>
