@@ -314,12 +314,12 @@ bool Clock::Refresh()
 			if (binMinTmp >= 32)
 			{
 				binMinTmp -= 32;
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000);
 				//binMinArray[5] = true;
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
+				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000);
 			}
 			
 			if (binMinTmp >= 16)
@@ -450,7 +450,7 @@ bool Clock::Refresh()
 		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 0, 60);
 
 
-		// Binary Date //
+			// Binary Date //
 
 			uint8_t binDayTmp = static_cast<int>(day);
 			uint8_t binMonTmp = static_cast<int>(month);
@@ -464,7 +464,7 @@ bool Clock::Refresh()
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 			}	
 			
 			if (binDayTmp >= 8)
@@ -475,7 +475,7 @@ bool Clock::Refresh()
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 			}
 			
 			if (binDayTmp >= 4)
@@ -486,7 +486,7 @@ bool Clock::Refresh()
 			}		
 			else			
 			{
-				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 			}
 			
 			if (binDayTmp >= 2)
@@ -497,7 +497,7 @@ bool Clock::Refresh()
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 			}
 			
 			if (binDayTmp == 1)
@@ -507,7 +507,7 @@ bool Clock::Refresh()
 			}
 			else
 			{
-				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF));
+				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
 			}			
 			
 			// Months //
