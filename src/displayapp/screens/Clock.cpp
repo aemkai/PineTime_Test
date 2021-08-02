@@ -87,7 +87,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED5,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));	
 	lv_obj_set_size(minLED5, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, (LED_SIZE/4), (5+(1.25*LED_SIZE)));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
+	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, (LED_SIZE/8), (5+(1.25*LED_SIZE)));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
 	//lv_obj_align(minLED5, label_time, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 10); 	// relativ zu Uhrzeit setzen an linker unterer Kante, dann 10 px drunter
 	
 	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
@@ -96,7 +96,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));	
 	lv_obj_set_size(minLED4, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);
+	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);
 
 	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
@@ -104,7 +104,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));	
 	lv_obj_set_size(minLED3, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED3, minLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(minLED3, minLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	minLED2 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
@@ -112,7 +112,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));
 	lv_obj_set_size(minLED2, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	minLED1 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
@@ -120,7 +120,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));		
 	lv_obj_set_size(minLED1, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED1, minLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(minLED1, minLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	minLED0 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
@@ -128,7 +128,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(minLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));		
 	lv_obj_set_size(minLED0, LED_SIZE, LED_SIZE);
-	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	// for hours //
 	///////////////
@@ -147,7 +147,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(hourLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));			
 	lv_obj_set_size(hourLED3, LED_SIZE, LED_SIZE);
-	lv_obj_align(hourLED3, hourLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(hourLED3, hourLED4, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	hourLED2 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
@@ -155,7 +155,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(hourLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));			
 	lv_obj_set_size(hourLED2, LED_SIZE, LED_SIZE);
-	lv_obj_align(hourLED2, hourLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(hourLED2, hourLED3, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	hourLED1 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
@@ -163,7 +163,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(hourLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));			
 	lv_obj_set_size(hourLED1, LED_SIZE, LED_SIZE);
-	lv_obj_align(hourLED1, hourLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);		
+	lv_obj_align(hourLED1, hourLED2, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);		
 	
 	hourLED0 = lv_obj_create(lv_scr_act(), nullptr);
 	lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
@@ -171,7 +171,7 @@ Clock::Clock(DisplayApp* app,
 	lv_obj_set_style_local_border_width(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING);
 	lv_obj_set_style_local_line_color(hourLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x999999));			
 	lv_obj_set_size(hourLED0, LED_SIZE, LED_SIZE);
-	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/2), 0);	
+	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, (LED_SIZE/8), 0);	
 */	
 }
 
