@@ -288,7 +288,7 @@ bool Clock::Refresh()
 				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
 			}			
 			
-			// Stunden //
+/*			// Stunden //
 			if (binHourTmp >= 16)
 			{
 				binHourTmp -= 16;
@@ -342,7 +342,7 @@ bool Clock::Refresh()
 			{
 				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
 			}			
-			
+*/			
 			
 		}
 		// Ende Binary Watch //
