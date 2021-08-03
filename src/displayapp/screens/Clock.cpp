@@ -42,14 +42,7 @@ Clock::Clock(DisplayApp* app,
                                            dateTimeController{dateTimeController}, batteryController{batteryController},
                                            bleController{bleController} 
 {
-	displayedChar[0] = 0;
-	displayedChar[1] = 0;
-	displayedChar[2] = 0;
-	displayedChar[3] = 0;
-	displayedChar[4] = 0;
-	displayedChar[5] = 0;
-	displayedChar[6] = 0;
-
+	seconds_old = 0;
 	
 	label_date = lv_label_create(lv_scr_act(), nullptr);
 	lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 85);
@@ -86,180 +79,27 @@ Clock::Clock(DisplayApp* app,
 	
 	// for minutes //
 	/////////////////
-/*	
-	minLED5 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED5,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
-	lv_obj_set_size(minLED5, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED5, lv_scr_act(), LV_ALIGN_IN_LEFT_MID, LED_SPACE_H1/2, (5+(LED_SIZE1/2+LED_SPACE_V1)));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0, -35);)
-	//lv_obj_align(minLED5, label_time, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 10); 	// relativ zu Uhrzeit setzen an linker unterer Kante, dann 10 px drunter
-	
-	minLED4 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
-	lv_obj_set_size(minLED4, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED4, minLED5, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);
-
-	minLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
-	lv_obj_set_size(minLED3, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED3, minLED4, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	minLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);
-	lv_obj_set_size(minLED2, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED2, minLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	minLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
-	lv_obj_set_size(minLED1, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED1, minLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	minLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MIN_OFF);
-	lv_obj_set_style_local_radius(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(minLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
-	lv_obj_set_size(minLED0, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(minLED0, minLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	// for hours //
-	///////////////
-	
-	hourLED4 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
-	lv_obj_set_style_local_radius(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(hourLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
-	lv_obj_set_size(hourLED4, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(hourLED4, minLED4, LV_ALIGN_OUT_BOTTOM_MID, 0, (-(2*LED_SIZE1+LED_SPACE_V1)));	// 1/4 Kreis über minLED4
-
-	hourLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
-	lv_obj_set_style_local_radius(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(hourLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(hourLED3, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(hourLED3, hourLED4, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	hourLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
-	lv_obj_set_style_local_radius(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(hourLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(hourLED2, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(hourLED2, hourLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	hourLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
-	lv_obj_set_style_local_radius(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(hourLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(hourLED1, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(hourLED1, hourLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);		
-	
-	hourLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_HOUR_OFF);
-	lv_obj_set_style_local_radius(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING1);
-	lv_obj_set_style_local_line_color(hourLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(hourLED0, LED_SIZE1, LED_SIZE1);
-	lv_obj_align(hourLED0, hourLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H1, 0);	
-*/
-
-	// for days //
-	/////////////////
-	
-	dayLED4 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-	lv_obj_set_style_local_radius(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(dayLED4,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
-	lv_obj_set_size(dayLED4, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED4, lv_scr_act(), LV_ALIGN_CENTER, (-((2.5*LED_SIZE2)+(LED_SPACE_H2/2))), (LED_SIZE1));		// absolut setzen (LV_ALIGN_IN_LEFT_MID, 5, 5) ist i.O., wenn Zeit noch 20 px höher -> LV_ALIGN_IN_RIGHT_MID, 0,
-
-	dayLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-	lv_obj_set_style_local_radius(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(dayLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);	
-	lv_obj_set_size(dayLED3, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED3, dayLED4, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	dayLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-	lv_obj_set_style_local_radius(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(dayLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);
-	lv_obj_set_size(dayLED2, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED2, dayLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	dayLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-	lv_obj_set_style_local_radius(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(dayLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
-	lv_obj_set_size(dayLED1, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED1, dayLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	dayLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-	lv_obj_set_style_local_radius(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(dayLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);		
-	lv_obj_set_size(dayLED0, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(dayLED0, dayLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	// for months //
-	///////////////
-	
-
-
-	monLED3 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-	lv_obj_set_style_local_radius(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(monLED3,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(monLED3, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(monLED3, dayLED3, LV_ALIGN_OUT_BOTTOM_MID, 0, (LED_SPACE_V2));	// 1/4 Kreis unter dayLED3	
-	
-	monLED2 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-	lv_obj_set_style_local_radius(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(monLED2,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(monLED2, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(monLED2, monLED3, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	monLED1 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-	lv_obj_set_style_local_radius(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(monLED1,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(monLED1, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(monLED1, monLED2, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);		
-	
-	monLED0 = lv_obj_create(lv_scr_act(), nullptr);
-	lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-	lv_obj_set_style_local_radius(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LV_RADIUS_CIRCLE);
-	lv_obj_set_style_local_border_width(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_RING2);
-	lv_obj_set_style_local_line_color(monLED0,LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_RING);			
-	lv_obj_set_size(monLED0, LED_SIZE2, LED_SIZE2);
-	lv_obj_align(monLED0, monLED1, LV_ALIGN_OUT_RIGHT_MID, LED_SPACE_H2, 0);	
-		   
+	// for seconds //
+	// from top down
+	for (uint8_t i = 0; i < NR_SECBARS; i++)
+	{	
+		secbar[i] = lv_bar_create(lv_scr_act(), nullptr);
+		lv_obj_set_style_local_bg_color(secbar[i], LV_BAR_PART_BG, LV_STATE_DEFAULT, LED_COL_SEC_OFF);
+		lv_obj_set_style_local_line_color(stepsArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, LED_COL_SEC_ON);			
+		lv_obj_set_size(secbar[i], 230, 5);	
+		lv_bar_set_range(secbar[i], 0, 15);		// range = 1/4 minute
+		//lv_bar_set_anim_time(secbar[i], 100);
+		lv_bar_set_value(secbar[i], 0, LV_ANIM_OFF);
+		
+		if (i == 0)	// positioning first bar absolute
+		{
+			lv_obj_align(secbar[i], lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, (LED_SIZE1));
+		}
+		else						// positioning following bars relative to predecessor (underneath)
+		{
+			lv_obj_align(secbar[i], (secbar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, SECBAR_SPACE_V);
+		}
+	}	   
 
 }
 
@@ -289,284 +129,44 @@ bool Clock::Refresh()
 		auto minute = time.minutes().count();
 		auto second = time.seconds().count();
 
-		char secondsChar[3];
-		sprintf(secondsChar, "%02d", static_cast<int>(second));
-
-		char minutesChar[3];
-		sprintf(minutesChar, "%02d", static_cast<int>(minute));
-
-		char hoursChar[3];
-		sprintf(hoursChar, "%02d", hour);
-
 
 		// Binary Watch //
 		//////////////////
-/*	
-		if (hoursChar[0] != displayedChar[0] || hoursChar[1] != displayedChar[1] || minutesChar[0] != displayedChar[2] || minutesChar[1] != displayedChar[3])
+	
+		// seconds //
+		if (seconds_old != seconds)
 		{
-			//bool binMinArray[5] = {false};
-			//bool binHourArray[4] = {false};
-			
-			uint8_t binMinTmp = static_cast<int>(minute);
-			uint8_t binHourTmp = static_cast<int>(hour);
-			
-			// Minuten //
-			if (binMinTmp >= 32)
+			if (seconds == 0)
 			{
-				binMinTmp -= 32;
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000);
-				//binMinArray[5] = true;
+				lv_bar_set_value(secbar[0], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secbar[1], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secbar[2], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secbar[3], 0, LV_ANIM_OFF);		
+				
 			}
-			else
+			else if (seconds < 16)
 			{
-				lv_obj_set_style_local_bg_color(minLED5, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000);
+				lv_bar_set_value(secbar[0], seconds, LV_ANIM_OFF);		
 			}
-			
-			if (binMinTmp >= 16)
+			else if (seconds < 31)
 			{
-				binMinTmp -= 16;
-				//binMinArray[4] = true;
-				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
+				lv_bar_set_value(secbar[1], seconds-16, LV_ANIM_OFF);		
 			}
-			else
+			else if (seconds < 46)
 			{
-				lv_obj_set_style_local_bg_color(minLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
-			}	
-			
-			if (binMinTmp >= 8)
-			{
-				binMinTmp -= 8;
-				//binMinArray[3] = true;
-				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
+				lv_bar_set_value(secbar[2], seconds-31, LV_ANIM_OFF);		
 			}
-			else
+			else if (seconds < 60)
 			{
-				lv_obj_set_style_local_bg_color(minLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
+				lv_bar_set_value(secbar[3], seconds-46, LV_ANIM_OFF);		
 			}
-			
-			if (binMinTmp >= 4)
-			{
-				binMinTmp -= 4;
-				//binMinArray[2] = true;
-				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(minLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
-			}
-			
-			if (binMinTmp >= 2)
-			{
-				binMinTmp -= 2;
-				//binMinArray[1] = true;
-				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(minLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
-			}
-			
-			if (binMinTmp == 1)
-			{
-				//binMinArray[0] = true;
-				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xDD0000));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(minLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x220000));
-			}			
-			
-			// Stunden //
-			if (binHourTmp >= 16)
-			{
-				binHourTmp -= 16;
-				//binHourArray[4] = true;
-				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00DD00));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(hourLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
-			}	
-			
-			if (binHourTmp >= 8)
-			{
-				binHourTmp -= 8;
-				//binHourArray[3] = true;
-				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00DD00));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(hourLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
-			}
-			
-			if (binHourTmp >= 4)
-			{
-				binHourTmp -= 4;
-				//binHourArray[2] = true;
-				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00DD00));
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(hourLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
-			}
-			
-			if (binHourTmp >= 2)
-			{
-				binHourTmp -= 2;
-				//binHourArray[1] = true;
-				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00DD00));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(hourLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
-			}
-			
-			if (binHourTmp == 1)
-			{
-				//binHourArray[0] = true;
-				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x00DD00));
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(hourLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0x002200));
-			}			
+				
 			
 			
+			seconds_old = seconds;
 		}
-		// Ende Binary Watch //
-*/	
+		// end binary watch //	
 
-    if ((year != currentYear) || (month != currentMonth) || (dayOfWeek != currentDayOfWeek) || (day != currentDay)) 
-    {
-		char dateStr[22];
-
-		// Monat als String
-		//sprintf(dateStr, "%s %d %s %d", dateTimeController.DayOfWeekShortToString(), day, dateTimeController.MonthShortToString(), year);
-		// Monat als Zahl
-		//sprintf(dateStr, "%s %d.%02d.%d", dateTimeController.DayOfWeekShortToString(), day, month, year);		
-		sprintf(dateStr, "%d", year);		
-
-		lv_label_set_text(label_date, dateStr);
-		lv_obj_align(label_date, lv_scr_act(), LV_ALIGN_CENTER, 20, 85);
-
-
-			// Binary Date //
-
-			uint8_t binDayTmp = static_cast<int>(day);
-			uint8_t binMonTmp = static_cast<int>(month);
-			
-			// Days //	
-			if (binDayTmp >= 16)
-			{
-				binDayTmp -= 16;
-				//binMinArray[4] = true;
-				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED4, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-			}	
-			
-			if (binDayTmp >= 8)
-			{
-				binDayTmp -= 8;
-				//binMinArray[3] = true;
-				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-			}
-			
-			if (binDayTmp >= 4)
-			{
-				binDayTmp -= 4;
-				//binMinArray[2] = true;
-				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(dayLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-			}
-			
-			if (binDayTmp >= 2)
-			{
-				binDayTmp -= 2;
-				//binMinArray[1] = true;
-				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-			}
-			
-			if (binDayTmp == 1)
-			{
-				//binMinArray[0] = true;
-				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(dayLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_DAY_OFF);
-			}			
-			
-			// Months //
-			if (binMonTmp >= 8)
-			{
-				binMonTmp -= 8;
-				//binHourArray[3] = true;
-				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED3, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp >= 4)
-			{
-				binMonTmp -= 4;
-				//binHourArray[2] = true;
-				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}		
-			else			
-			{
-				lv_obj_set_style_local_bg_color(monLED2, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp >= 2)
-			{
-				binMonTmp -= 2;
-				//binHourArray[1] = true;
-				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED1, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}
-			
-			if (binMonTmp == 1)
-			{
-				//binHourArray[0] = true;
-				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_ON);
-			}
-			else
-			{
-				lv_obj_set_style_local_bg_color(monLED0, LV_BTN_PART_MAIN, LV_STATE_DEFAULT, LED_COL_MON_OFF);
-			}			
-			
-			// Ende Binary Date //
-			
-		}
-
-
-
-		currentYear = year;
-		currentMonth = month;
-		currentDayOfWeek = dayOfWeek;
-		currentDay = day;
-    }	
-	
-	
 
 	
   return running;
