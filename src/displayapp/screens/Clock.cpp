@@ -76,7 +76,7 @@ Clock::Clock(DisplayApp* app,
 	
 	// for seconds //
 	// from top down
-	for (uint8_t i = 0; i < NR_secBarS; i++)
+	for (uint8_t i = 0; i < NR_SECBARS; i++)
 	{	
 		secBar[i] = lv_bar_create(lv_scr_act(), nullptr);
 		lv_obj_set_style_local_bg_color(secBar[i], LV_BAR_PART_BG, LV_STATE_DEFAULT, LED_COL_SEC_OFF);
@@ -92,7 +92,7 @@ Clock::Clock(DisplayApp* app,
 		}
 		else						// positioning following bars relative to predecessor (underneath)
 		{
-			lv_obj_align(secBar[i], (secBar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, SECBAR_SPACE_V);
+			lv_obj_align(secBar[i], secBar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, SECBAR_SPACE_V);
 		}
 	}		   
 
@@ -129,9 +129,9 @@ bool Clock::Refresh()
 		//////////////////
 	
 		// seconds //
-		if (seconds_old != seconds)
+		if (seconds_old != second)
 		{
-			if (seconds == 0)
+			if (second == 0)
 			{
 				lv_bar_set_value(secBar[0], 0, LV_ANIM_OFF);		
 				lv_bar_set_value(secBar[1], 0, LV_ANIM_OFF);		
@@ -139,28 +139,28 @@ bool Clock::Refresh()
 				lv_bar_set_value(secBar[3], 0, LV_ANIM_OFF);		
 				
 			}
-			else if (seconds < 16)
+			else if (second < 16)
 			{
-				lv_bar_set_value(secBar[0], seconds, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[0], second, LV_ANIM_OFF);		
 			}
-			else if (seconds < 31)
+			else if (second < 31)
 			{
-				lv_bar_set_value(secBar[1], seconds-16, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[1], second-16, LV_ANIM_OFF);		
 			}
-			else if (seconds < 46)
+			else if (second < 46)
 			{
-				lv_bar_set_value(secBar[2], seconds-31, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[2], second-31, LV_ANIM_OFF);		
 			}
-			else if (seconds < 60)
+			else if (second < 60)
 			{
-				lv_bar_set_value(secBar[3], seconds-46, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[3], second-46, LV_ANIM_OFF);		
 			}
 				
 			
 			
-			seconds_old = seconds;
+			second_old = second;
 		}
-		// end binary watch //		
+		// end binary watch //	
 	}
 
 	
