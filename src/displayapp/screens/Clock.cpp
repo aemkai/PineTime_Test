@@ -92,7 +92,7 @@ Clock::Clock(DisplayApp* app,
 		}
 		else						// positioning following bars relative to predecessor (underneath)
 		{
-			lv_obj_align(secBar[i], (secBar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, secBar_SPACE_V);
+			lv_obj_align(secBar[i], (secBar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, SECBAR_SPACE_V);
 		}
 	}		   
 
