@@ -74,32 +74,27 @@ Clock::Clock(DisplayApp* app,
 	
 	// Generate Circles //
 	
-	// for minutes //
-	/////////////////
-	
-	// for minutes //
-	/////////////////
 	// for seconds //
 	// from top down
-	for (uint8_t i = 0; i < NR_SECBARS; i++)
+	for (uint8_t i = 0; i < NR_secBarS; i++)
 	{	
-		secbar[i] = lv_bar_create(lv_scr_act(), nullptr);
-		lv_obj_set_style_local_bg_color(secbar[i], LV_BAR_PART_BG, LV_STATE_DEFAULT, LED_COL_SEC_OFF);
-		lv_obj_set_style_local_line_color(stepsArc, LV_ARC_PART_INDIC, LV_STATE_DEFAULT, LED_COL_SEC_ON);			
-		lv_obj_set_size(secbar[i], 230, 5);	
-		lv_bar_set_range(secbar[i], 0, 15);		// range = 1/4 minute
-		//lv_bar_set_anim_time(secbar[i], 100);
-		lv_bar_set_value(secbar[i], 0, LV_ANIM_OFF);
+		secBar[i] = lv_bar_create(lv_scr_act(), nullptr);
+		lv_obj_set_style_local_bg_color(secBar[i], LV_BAR_PART_BG, LV_STATE_DEFAULT, LED_COL_SEC_OFF);
+		lv_obj_set_style_local_line_color(secBar[i], LV_ARC_PART_INDIC, LV_STATE_DEFAULT, LED_COL_SEC_ON);			
+		lv_obj_set_size(secBar[i], 230, 5);	
+		lv_bar_set_range(secBar[i], 0, 15);		// range = 1/4 minute
+		//lv_bar_set_anim_time(secBar[i], 100);
+		lv_bar_set_value(secBar[i], 0, LV_ANIM_OFF);
 		
 		if (i == 0)	// positioning first bar absolute
 		{
-			lv_obj_align(secbar[i], lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, (LED_SIZE1));
+			lv_obj_align(secBar[i], lv_scr_act(), LV_ALIGN_IN_LEFT_MID, 5, (LED_SIZE1));
 		}
 		else						// positioning following bars relative to predecessor (underneath)
 		{
-			lv_obj_align(secbar[i], (secbar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, SECBAR_SPACE_V);
+			lv_obj_align(secBar[i], (secBar[i-1], LV_ALIGN_OUT_BOTTOM_MID, 0, secBar_SPACE_V);
 		}
-	}	   
+	}		   
 
 }
 
@@ -138,35 +133,35 @@ bool Clock::Refresh()
 		{
 			if (seconds == 0)
 			{
-				lv_bar_set_value(secbar[0], 0, LV_ANIM_OFF);		
-				lv_bar_set_value(secbar[1], 0, LV_ANIM_OFF);		
-				lv_bar_set_value(secbar[2], 0, LV_ANIM_OFF);		
-				lv_bar_set_value(secbar[3], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[0], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[1], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[2], 0, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[3], 0, LV_ANIM_OFF);		
 				
 			}
 			else if (seconds < 16)
 			{
-				lv_bar_set_value(secbar[0], seconds, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[0], seconds, LV_ANIM_OFF);		
 			}
 			else if (seconds < 31)
 			{
-				lv_bar_set_value(secbar[1], seconds-16, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[1], seconds-16, LV_ANIM_OFF);		
 			}
 			else if (seconds < 46)
 			{
-				lv_bar_set_value(secbar[2], seconds-31, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[2], seconds-31, LV_ANIM_OFF);		
 			}
 			else if (seconds < 60)
 			{
-				lv_bar_set_value(secbar[3], seconds-46, LV_ANIM_OFF);		
+				lv_bar_set_value(secBar[3], seconds-46, LV_ANIM_OFF);		
 			}
 				
 			
 			
 			seconds_old = seconds;
 		}
-		// end binary watch //	
-
+		// end binary watch //		
+	}
 
 	
   return running;
