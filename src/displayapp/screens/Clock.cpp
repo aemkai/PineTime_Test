@@ -158,7 +158,7 @@ bool Clock::Refresh()
 				
 			
 			
-			second_old = second;
+			seconds_old = second;
 		}
 		// end binary watch //	
 	}
